@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Papeleria S</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="Img/logos/favicon.png">
+
+    <!-- CSS ONLY BOOSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+
+        
+    /*  .navbar-custom {
+        background-color: #ffffff; /* Cambia este color por el que prefieras 
+      }
+
+      .navbar-down {
+        background-color: #000000; /* Cambia este color por el que prefieras 
+      }
+
+      @media (max-width: 992px) {
+        .navbar-brand {
+          width: 100%;
+          text-align: center;
+        }
+        .navbar-nav {
+          text-align: center;
+        }
+      }
+*/
+        .carousel-item img {
+        width: 100%;
+        max-height: 400px; /* Puedes ajustar esta altura según sea necesario */
+        object-fit: cover; /* Cubre el área de la imagen manteniendo la proporción */
+        object-position: center; /* Centra la imagen dentro del contenedor */
+      }
+
+      @media (max-width: 768px) {
+        .carousel-item img {
+          max-height: 300px; /* Altura ajustada para dispositivos más pequeños */
+        }
+      }
+
+      @media (max-width: 576px) {
+        .carousel-item img {
+          max-height: 200px; /* Altura ajustada para dispositivos aún más pequeños */
+        }
+      }
+
+
+      .card:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s;
+      }
+
+      .card img {
+      object-fit: contain;
+      height: 250px;
+      width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
+      }
+
+      .footer-custom {
+        background-color: #000000; /* Cambia este color por el que prefieras */
+        color: #ffffff;
+        padding: 40px 0;
+      }
+
+      .footer-custom a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .footer-custom a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-logo {
+        max-width: 70%;
+      }
+
+      .fixed-icon {
+        position: fixed;
+        top: 95%;
+        left: 89%;
+        transform: translateY(-50%);
+        z-index: 9999; /* Asegura que el ícono esté por encima de otros elementos */
+        background-color: rgba(0, 226, 19, 0); /* Fondo blanco semi-transparente */
+        border: 1px solid #e96e93; /* Borde del ícono */
+        border-radius: 10px 0 0 10px; /* Bordes redondeados solo en la esquina derecha */
+      }
+
+      .fixed-icon img {
+        width: 90px; /* Ajusta el tamaño de la imagen según tus necesidades */
+        height: auto; /* Mantiene la proporción de la imagen */
+      }
+      /* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .fixed-icon {
+        left: 70%; /* Ajusta la posición horizontal del ícono para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .fixed-icon {
+        left: 60%; /* Ajusta la posición horizontal del ícono para pantallas muy pequeñas */
+    }
+
+  
+  }
+    </style>
+</head>
+
+<body>
+
+ <div class="fixed-icon">
+  <a href="https://wa.me/message/Q4IDJZDEGDYYO1">
+      <h6 class="text-danger">Contactanos</h6>
+      <img src="Img/logos/LOGO SIN NOMBRE.png" alt="Icono">
+  </a>
+</div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html">
+            <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" width="10%" height="20%" class="d-inline-block align-text-center">
+            <span class="fw-bold">PAPELERIA</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link letra fw-bold" href="index.html">INICIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="Cosmeticos.html">COSMETICOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="Servicios.html">SERVICIOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="https://wa.me/message/Q4IDJZDEGDYYO1">CONTACTANOS</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <header>
+        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="Img/fondos/PRODCUTOS 2.webp" class="d-block w-100 carousel-img">
+            </div>
+          </div>
+        </div>
+<!---carusel final -->
+<section class="container my-0" data-aos="fade-up">
+  <div class="row">
+    <div class="col-lg-0   justi" >
+      <h1 class="center">PAPELERIA</h1>
+      <P class="justi"> Mantén tu espacio de trabajo o estudio bien equipado con nuestra amplia selección de artículos de oficina y escolar. Desde bolígrafos y carpetas hasta calculadoras y agendas, tenemos todo lo que necesitas para mantenerte organizado y eficiente.</P>
+</section>
+
+<!---productos -->
+<div class="container mt-5" data-aos="fade-down-left">
+  <input type="text" id="search-input" class="form-control mb-4" placeholder="Buscar producto...">
+  <div id="product-container" class="row">
+      <!-- Las tarjetas de productos se generarán aquí -->
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const products = [
+          { title: "Borradores", price: "$400", imgSrc: "Img/Papeleria/borrador.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Cuaderno", price: "$4.200", imgSrc: "Img/Papeleria/cuaderno.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Marcadores", price: "$3.200", imgSrc: "Img/Papeleria/marcadores.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Fomi 1/8 paquete diversos colores", price: "$600", imgSrc: "Img/Papeleria/fomi.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Lapiceros en azul negro y rojo", price: "$1.200", imgSrc: "Img/Papeleria/lapicero-de-punta-fina-0ffi-Esco-vertical.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Ega en barra", price: "$2.400", imgSrc: "Img/Papeleria/ega en barra.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Carton Paja", price: "$500", imgSrc: "Img/Papeleria/cartonpaja.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Plastilina por Unidad", price: "$800", imgSrc: "Img/Papeleria/plasuni.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Carpeta Blanca", price: "$500", imgSrc: "Img/Papeleria/carpeta.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Carpeta", price: "$5.000", imgSrc: "Img/Papeleria/carpetas.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Cartuchera", price: "$2.500", imgSrc: "Img/Papeleria/cartuchera.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Cartulina", price: "$200", imgSrc: "Img/Papeleria/cartulina.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Cartulina plana", price: "$500", imgSrc: "Img/Papeleria/cartulina-fuertes.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Cintas", price: "$2.500", imgSrc: "Img/Papeleria/cinta.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Colores", price: "$8.500", imgSrc: "Img/Papeleria/colores.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Corrector", price: "$1.600", imgSrc: "Img/Papeleria/corrector.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Hoja de vida", price: "$800", imgSrc: "Img/Papeleria/Hoja de vida.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Lapiz", price: "$1.200", imgSrc: "Img/Papeleria/lapiz.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          
+          { title: "Papelillo", price: "$200", imgSrc: "Img/Papeleria/papelillo.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Papel Regalo", price: "$800", imgSrc: "Img/Papeleria/papelR.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Plumones", price: "$3.000", imgSrc: "Img/Papeleria/plumones.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Talonario de rifa", price: "$1.000", imgSrc: "Img/Papeleria/rifa.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Sacapuntas", price: "$300", imgSrc: "Img/Papeleria/sacapunta.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Sobre de manila carta", price: "$400", imgSrc: "Img/Papeleria/sobreM.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Sobre de manila oficio", price: "$500", imgSrc: "Img/Papeleria/oficio.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Temperas por unidad", price: "$1.100", imgSrc: "Img/Papeleria/temperas.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Temperas en caja", price: "$3.000", imgSrc: "Img/Papeleria/cajatemp.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Alcancias", price: "$1.000", imgSrc: "Img/Papeleria/alcancia.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Block carta", price: "$3.500", imgSrc: "Img/Papeleria/blockCarta.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Block oficio", price: "$4.700", imgSrc: "Img/Papeleria/blockOficio.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Recibo de caja menor", price: "$1.000", imgSrc: "Img/Papeleria/cajamenor.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Carpeta Cafe", price: "$500", imgSrc: "Img/Papeleria/carpetacafe.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Escuadras", price: "$2.500", imgSrc: "Img/Papeleria/escuadras.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Formato comercial", price: "$2.500", imgSrc: "Img/Papeleria/formato comercial.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Tablas periodicas", price: "$2.000", imgSrc: "Img/Papeleria/image.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Lapiz rojo", price: "$1.600", imgSrc: "Img/Papeleria/lapizrojo.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Marcadores borrables", price: "$2.500", imgSrc: "Img/Papeleria/mbpelikan.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Grapadora pequeña", price: "$2.600", imgSrc: "Img/Papeleria/mini-grap.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Papel bond", price: "$2.500", imgSrc: "Img/Papeleria/papel bond.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Papel carbon", price: "$800", imgSrc: "Img/Papeleria/papel carbon.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Papel Crepe", price: "$1.000", imgSrc: "Img/Papeleria/papelcrepe.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Papel Fotografico", price: "$2.000", imgSrc: "Img/Papeleria/papelfoto.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Papel Kraft", price: "$1.200", imgSrc: "Img/Papeleria/papelkraft.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },          
+          { title: "Block milimetrado", price: "$14.000", imgSrc: "Img/Papeleria/papelmilimetrado.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Resaltadores", price: "$2.500", imgSrc: "Img/Papeleria/resaltadores.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Silicona delgada", price: "$600", imgSrc: "Img/Papeleria/silicona delgada.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Silicona gruesa", price: "$800", imgSrc: "Img/Papeleria/silicona gruesa.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Silicona liquida", price: "$3.200", imgSrc: "Img/Papeleria/siliconaliquida.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Sobre de regalo", price: "$200", imgSrc: "Img/Papeleria/sobre de regalo.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Sobre de regalo con diseño", price: "$1.200", imgSrc: "Img/Papeleria/sobreDise.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Tabla de plastilina", price: "$5.000", imgSrc: "Img/Papeleria/tabla-plastilina.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Talonario de recibo", price: "$1.000", imgSrc: "Img/Papeleria/talon.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Caja de tapa bocas", price: "$10.000", imgSrc: "Img/Papeleria/tapabocas.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Tijeras", price: "$1.000", imgSrc: "Img/Papeleria/tijeras.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Escarchas en tubos", price: "$800", imgSrc: "Img/Papeleria/tubosdeescarcha.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Huellero", price: "$3.000", imgSrc: "Img/Papeleria/huellero.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Sacapunta doble", price: "$1.000", imgSrc: "Img/Papeleria/sacaputa doble.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          { title: "Cinta de enmascarar", price: "$2.600", imgSrc: "Img/Papeleria/citnaMas.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+          // { title: "plastilinas en unidad 12 ", price: "$2.600", imgSrc: "Img/Papeleria/citnaMas.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+      ];
+
+      products.sort((a, b) => a.title.localeCompare(b.title));
+
+      const container = document.getElementById("product-container");
+      const searchInput = document.getElementById("search-input");
+
+      function displayProducts(filteredProducts) {
+          container.innerHTML = "";
+          filteredProducts.forEach(product => {
+              const colDiv = document.createElement("div");
+              colDiv.className = "col-md-4 mb-4";
+
+              const cardDiv = document.createElement("div");
+              cardDiv.className = "card";
+
+              const link = document.createElement("a");
+              link.href = product.link;
+              link.target = "_blank";
+
+              const img = document.createElement("img");
+              img.className = "card-img-top";
+              img.src = product.imgSrc;
+              img.alt = product.title;
+
+              const cardBody = document.createElement("div");
+              cardBody.className = "card-body text-center";
+
+              const cardTitle = document.createElement("h5");
+              cardTitle.className = "card-title";
+              cardTitle.innerText = product.title;
+
+              const cardText = document.createElement("p");
+              cardText.className = "card-text";
+              cardText.innerText = product.price;
+
+              link.appendChild(img);
+              cardDiv.appendChild(link);
+              cardDiv.appendChild(cardBody);
+              cardBody.appendChild(cardTitle);
+              cardBody.appendChild(cardText);
+              colDiv.appendChild(cardDiv);
+              container.appendChild(colDiv);
+          });
+      }
+
+      searchInput.addEventListener("input", function() {
+          const searchTerm = searchInput.value.toLowerCase();
+          const filteredProducts = products.filter(product => 
+              product.title.toLowerCase().includes(searchTerm)
+          );
+          displayProducts(filteredProducts);
+      });
+
+      displayProducts(products);
+  });
+</script>
+
+
+<div class="p-2" data-aos="fade-left">
+  <h2 class="fw-bold h2 p-2 text-center" id="productos">Nos puedes encontrar Aqui</h2>
+</div>
+
+  <!-- Footer -->
+  <footer class="footer-custom" data-aos="fade-up">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h5>Contacto</h5>
+          <ul class="list-unstyled">
+            <li>Teléfono: <a href="tel:301-441-4701"></a></li>
+            <a href="https://wa.me/message/Q4IDJZDEGDYYO1" aria-label="Facebook"><i class="fab fa-facebook">301-441-4701</i></a>
+            <li>Email:</li>
+            <a href="mailto:papeleria.s27@gmail.com" aria-label="Facebook"><i class="fab fa-facebook">papeleria.s27@gmail.com</i></a>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h5>Redes Sociales</h5>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/papeleria.soro" aria-label="Facebook"><i class="fab fa-facebook">facebook</i></a>
+            <!-- Añadir más iconos de redes sociales -->
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h5>Dirección</h5>
+          <p>Av4 #2-42 palmaseca</p>
+        </div>
+        <div class="col-md-3 col-sm-6 text-center mb-4">
+          <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" class="footer-logo">
+          <h5><a href="what.html">¿Quienes somos? </a></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127434.5548822756!2d-76.49730571751309!3d3.5109598714967127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a07555a296a91%3A0x4e51e8074e54052d!2sPapeleria%20S!5e0!3m2!1ses!2sco!4v1720125877261!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 text-center">
+          <p>&copy; 2023 Papeleria S. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- FIN DE Footer -->
+      </header>   
+      
+
+           <!-- Scripts de Bootstrap y AOS -->
+           
+           <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+           <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+           <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+           <script> AOS.init();</script>
+</body>
+</html>
