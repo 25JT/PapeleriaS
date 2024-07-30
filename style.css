@@ -46,6 +46,11 @@
     text-align: center;
     padding: 100px 0;
   }
+  .section{
+    padding: 5px;
+    color: red;
+    
+  }
   .benefit-icon {
     font-size: 3rem;
     color: #ff5a5f;
