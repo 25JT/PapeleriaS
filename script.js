@@ -1,3 +1,5 @@
+//Movimiento del carusel
+
 document.addEventListener('DOMContentLoaded', (event) => {
     var carouselElement = document.querySelector('#carouselExampleRide');
     var carousel = new bootstrap.Carousel(carouselElement, {

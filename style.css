@@ -1,4 +1,3 @@
-
 @import "functions";
 @import "variables";
 @import "variables-dark";
@@ -39,208 +38,270 @@
 @import "helpers";
 @import "utilities/api";
 
+.tarjeta{
+  border: #777777 solid 2px;
+  background: linear-gradient(315deg, #e6e6e6, #ffffff);
+box-shadow:  -10px -10px 11px #8f8f8f,
+             10px 10px 11px #ffffff;
+}
+.titBorder{
+  margin: 1% 15% 1% 15%;
+  text-align: center;
+  background: #f087a646;
+  border: #0e0e0e solid 2px;
+  border-radius: 15px;
+}
 .hero-section {
-    background-size: cover;
-    color: black;
-    padding: 10px;
-    text-align: center;
-    padding: 100px 0;
-  }
-  .section{
-    padding: 5px;
-    color: red;
-    
-  }
-  .benefit-icon {
-    font-size: 3rem;
-    color: #ff5a5f;
-  }
-  .testimonial {
-    background: #f9f9f9;
-    padding: 30px;
-    border-radius: 10px;
-    margin: 15px 0;
-  }
-  .empoderate {
-    color: #000000;
-    margin: auto;
+  background-size: cover;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  padding: 100px 0;
+}
 
-  }  
-  .contacto{
-    color: #000000;
-    size: 200px;
-  }
-  .testimonial {
-    margin-bottom: 2em;
-  }
-  .testimonial p {
-    text-align: center;
-  }
-  @media (min-width: 768px) {
-    .row {
-      display: flex;
-      align-items: center;
-    }
-  }
+.section {
+  padding: 5px;
+  color: red;
 
-  .footer-custom {
-    background-color: #000000; /* Cambia este color por el que prefieras */
-    color: #ffffff;
-    padding: 40px 0;
-  }
+}
 
-  .footer-custom a {
-    color: #ffffff;
-    text-decoration: none;
-  }
+.benefit-icon {
+  font-size: 3rem;
+  color: #ff5a5f;
+}
 
-  .footer-custom a:hover {
-    text-decoration: underline;
-  }
+.testimonial {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 15px 0;
+}
 
-  .footer-logo {
-    max-width: 70%;
-  }
+.empoderate {
+  color: #000000;
+  margin: auto;
 
-  .sombreado{
-    color: #e96e93;
-  }
-  .navbar-custom {
-    background-color: #ffffff; 
-  }
+}
 
-  .navbar-down {
-    background-color: #000000; 
-  }
+.contacto {
+  color: #000000;
+  size: 200px;
+}
 
-  @media (max-width: 992px) {
-    .navbar-brand {
-      width: 100%;
-      text-align: center;
-    }
-    .navbar-nav {
-      text-align: center;
-    }
-  }
+.testimonial {
+  margin-bottom: 2em;
+}
 
-    .carousel-item img {
+.testimonial p {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .row {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.footer-custom {
+  background-color: #000000;
+  /* Cambia este color por el que prefieras */
+  color: #ffffff;
+  padding: 40px 0;
+}
+
+.footer-custom a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-custom a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo {
+  max-width: 70%;
+}
+
+.sombreado {
+  color: #e96e93;
+}
+
+.navbar-custom {
+  background-color: #ffffff;
+}
+
+.navbar-down {
+  background-color: #000000;
+}
+
+
+@media (max-width: 992px) {
+  .navbar-brand {
     width: 100%;
-    max-height: 400px; /* Puedes ajustar esta altura según sea necesario */
-    object-fit: cover; /* Cubre el área de la imagen manteniendo la proporción */
-    object-position: center; /* Centra la imagen dentro del contenedor */
+    text-align: center;
   }
 
-  @media (max-width: 768px) {
-    .carousel-item img {
-      max-height: 300px; /* Altura ajustada para dispositivos más pequeños */
+  .navbar-nav {
+    text-align: center;
+ 
+  }
+
+  .nav-item{
+    border: #e03166 solid 1px;
+    margin: 0.9%;
+    background-color: #e96e93;
+    border-radius: 15px;
     }
+    .nav-item:hover{
+      border: #e03166 solid 1px;
+      
+      background-color: #ffeaf0;
+      border-radius: 15px;
+      }
+}
+
+.carousel-item img {
+  width: 100%;
+  max-height: 400px;
+  /* Puedes ajustar esta altura según sea necesario */
+  object-fit: cover;
+  /* Cubre el área de la imagen manteniendo la proporción */
+  object-position: center;
+  /* Centra la imagen dentro del contenedor */
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    max-height: 300px;
+    /* Altura ajustada para dispositivos más pequeños */
   }
+}
 
-  @media (max-width: 576px) {
-    .carousel-item img {
-      max-height: 200px; /* Altura ajustada para dispositivos aún más pequeños */
-    }
+@media (max-width: 576px) {
+  .carousel-item img {
+    max-height: 200px;
+    /* Altura ajustada para dispositivos aún más pequeños */
   }
+}
 
 
-  .card:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s;
-  }
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
 
-  .card img {
+.card img {
   object-fit: contain;
   height: 250px;
-  width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
-  }
-
-  .footer-custom {
-    background-color: #000000; /* Cambia este color por el que prefieras */
-    color: #ffffff;
-    padding: 40px 0;
-  }
-
-  .footer-custom a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-
-  .footer-custom a:hover {
-    text-decoration: underline;
-  }
-
-  .footer-logo {
-    max-width: 70%;
-  }
-
-  .fixed-icon {
-    position: fixed;
-    top: 95%;
-    left: 89%;
-    transform: translateY(-50%);
-    z-index: 9999; /* Asegura que el ícono esté por encima de otros elementos */
-    background-color: rgba(0, 226, 19, 0); /* Fondo blanco semi-transparente */
-    border: 1px solid #e96e93; /* Borde del ícono */
-    border-radius: 10px 0 0 10px; /* Bordes redondeados solo en la esquina derecha */
-  }
-
-  .fixed-icon img {
-    width: 90px; /* Ajusta el tamaño de la imagen según tus necesidades */
-    height: auto; /* Mantiene la proporción de la imagen */
-  }
-  /* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
-.fixed-icon {
-    left: 70%; /* Ajusta la posición horizontal del ícono para pantallas más pequeñas */
+  width: 100%;
+  /* Ajusta el tamaño de la imagen al contenedor */
 }
+
+.footer-custom {
+  background-color: #000000;
+  /* Cambia este color por el que prefieras */
+  color: #ffffff;
+  padding: 40px 0;
+}
+
+.footer-custom a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-custom a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo {
+  max-width: 70%;
+}
+
+.fixed-icon {
+  position: fixed;
+  top: 95%;
+  left: 89%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  /* Asegura que el ícono esté por encima de otros elementos */
+  background-color: rgba(0, 226, 19, 0);
+  /* Fondo blanco semi-transparente */
+  border: 1px solid #e96e93;
+  /* Borde del ícono */
+  border-radius: 10px 0 0 10px;
+  /* Bordes redondeados solo en la esquina derecha */
+}
+
+.fixed-icon img {
+  width: 90px;
+  /* Ajusta el tamaño de la imagen según tus necesidades */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .fixed-icon {
+    left: 70%;
+    /* Ajusta la posición horizontal del ícono para pantallas más pequeñas */
+  }
 }
 
 @media (max-width: 480px) {
-.fixed-icon {
-    left: 60%; /* Ajusta la posición horizontal del ícono para pantallas muy pequeñas */
-}
+  .fixed-icon {
+    left: 60%;
+    /* Ajusta la posición horizontal del ícono para pantallas muy pequeñas */
+  }
 
 
 }
-.justi{
-text-align: justify;
+
+.justi {
+  text-align: justify;
 }
 
 /* style YANBAL*/
 
 .benefits-section {
-    text-align: center;
-    margin: 50px 0;
-}
-.benefits-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-.benefits-row {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.benefits-item {
-    flex: 1 1 20%;
-    margin: 10px;
-    max-width: 250px;
-}
-.benefits-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
-}
-.benefits-item h5 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-.benefits-item p {
-    font-size: 1rem;
-    color: #555;
+  text-align: center;
+  margin: 50px 0;
 }
 
-.justi{
-    text-align: justify;
-  }
+.benefits-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.benefits-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.benefits-item {
+  flex: 1 1 20%;
+  margin: 10px;
+  max-width: 250px;
+}
+
+.benefits-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.benefits-item h5 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.benefits-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.justi {
+  text-align: justify;
+}
