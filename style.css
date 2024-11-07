@@ -160,6 +160,11 @@ box-shadow:  -10px -10px 11px #8f8f8f,
       border-radius: 15px;
       }
 }
+.carousel{
+  -webkit-box-shadow: -14px 9px 29px -8px rgba(0,0,0,1);
+  -moz-box-shadow: -14px 9px 29px -8px rgba(0,0,0,1);
+  box-shadow: -14px 9px 29px -8px rgba(0,0,0,1);
+}
 
 .carousel-item img {
   width: 100%;
@@ -204,6 +209,7 @@ box-shadow:  -10px -10px 11px #8f8f8f,
   color: #ffffff;
   padding: 40px 0;
 }
+
 
 .footer-custom a {
   color: #ffffff;
