@@ -15,12 +15,37 @@
  
 
 <!-- Icono -->
-<div class="fixed-icon">
-    <a href="https://wa.me/message/Q4IDJZDEGDYYO1" target="_blank">
-        <h6 class="text-danger">Contactanos</h6>
-        <img src="Img/logos/LOGO SIN NOMBRE.png" alt="Icono">
-    </a>
+<div class="fixed-icon" id="fixed-icon">
+  <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+    <h6 class="text-danger">Contactanos</h6>
+    <img src="Img/logos/LOGO SIN NOMBRE.png" alt="Icono">
+  </a>
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Escribenos un mensaje</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Mensaje:</label>
+            <textarea class="form-control" id="message-text" maxlength="100"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="mesj()">Enviar
+          Mensaje</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
@@ -162,6 +187,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="script.js"></script>
 <script>AOS.init();</script>
 </head>
 </html>

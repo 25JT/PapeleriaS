@@ -1,574 +1,620 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Papeleria S</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-    <link rel="icon" type="image/png" sizes="16x16" href="Img/logos/favicon.png">
 
-    <!-- CSS ONLY BOOSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css">
-   
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Papeleria S</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+  <link rel="icon" type="image/png" sizes="16x16" href="Img/logos/favicon.png">
+
+  <!-- CSS ONLY BOOSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
- <!-- Contenido de tu página -->
- <div class="fixed-icon">
-  <a href="https://wa.me/message/OTREY67XKAE3K1">
+  <!-- Icono -->
+  <div class="fixed-icon" id="fixed-icon">
+    <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
       <h6 class="text-danger">Contactanos</h6>
       <img src="Img/logos/LOGO SIN NOMBRE.png" alt="Icono">
-  </a>
-</div>
+    </a>
+  </div>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
-            <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" width="10%" height="20%" class="d-inline-block align-text-center">
-            <span class="fw-bold">COSMETICOS</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link letra fw-bold" href="index.html">INICIO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bold" href="Productos.html">PAPELERIA</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bold" href="Servicios.html">SERVICIOS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bold" href="https://wa.me/message/OTREY67XKAE3K1">CONTACTANOS</a>
-              </li>
-            </ul>
-          </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Escribenos un mensaje</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </nav>
-      <header>
-        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="Img/fondos/cosmeticos.webp" class="d-block w-100 carousel-img">
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Mensaje:</label>
+              <textarea class="form-control" id="message-text" maxlength="100"></textarea>
             </div>
-          </div>
+          </form>
         </div>
-<!---carusel final -->
-  <!--Promocion Yanbal-->
-<br>
-  <section class="container my-0" data-aos="fade-up">
-    <div class="row">
-      <div class="col-lg-0   justi" >
-        <h1 class="center">COSMENTICOS</h1>
-        <P class="justi"> ¡Descubre la belleza natural con nuestros exclusivos productos de Yanbal! Desde fragancias irresistibles hasta tratamientos faciales rejuvenecedores, tenemos todo lo que necesitas para realzar tu belleza. Calidad garantizada, resultados visibles. ¡Embellece tu vida con Yanbal hoy mismo!<P>
-  </section>
-  <div class="p-2" data-aos="fade-up">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="mesj()">Enviar
+            Mensaje</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" width="10%" height="20%"
+          class="d-inline-block align-text-center">
+        <span class="fw-bold">COSMETICOS</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link letra fw-bold" href="index.html">INICIO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="Productos.html">PAPELERIA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="Servicios.html">SERVICIOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="https://wa.me/message/OTREY67XKAE3K1">CONTACTANOS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header>
+    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="Img/fondos/cosmeticos.webp" class="d-block w-100 carousel-img">
+        </div>
+      </div>
+    </div>
+    <!---carusel final -->
+    <!--Promocion Yanbal-->
+    <br>
+    <section class="container my-0" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-0   justi">
+          <h1 class="center">COSMENTICOS</h1>
+          <P class="justi"> ¡Descubre la belleza natural con nuestros exclusivos productos de Yanbal! Desde fragancias
+            irresistibles hasta tratamientos faciales rejuvenecedores, tenemos todo lo que necesitas para realzar tu
+            belleza. Calidad garantizada, resultados visibles. ¡Embellece tu vida con Yanbal hoy mismo!
+          <P>
+    </section>
+    <div class="p-2" data-aos="fade-up">
       <h2 class="fw-bold h2 p-2 text-center">¡En Yanbal siempre ganas!</h2>
       <div class="benefits-row">
-          <div class="benefits-item">
-              <img src="Img/logos/ventas.png" alt="Icono Ventas">
-              <h5>Por tus ventas</h5>
-              <p>Dependiendo de cuanto vendas, gana hasta 35% de descuento en tus compras.</p>
-          </div>
-          <div class="benefits-item">
-              <img src="Img/logos/caja.png" alt="Icono Kit de Bienvenida">
-              <h5>Por tu Kit de Bienvenida</h5>
-              <p>Podrás hacer demostraciones a tus clientes o vender los productos de tu kit.</p>
-          </div>
-          <div class="benefits-item">
-              <img src="Img/logos/regalo.png" alt="Icono Logros en ventas">
-              <h5>Por tus logros en ventas</h5>
-              <p>Te reconocemos con productos Yanbal por tus logros de venta durante tus 3 primeras campañas.</p>
-          </div>
-          <div class="benefits-item">
-              <img src="Img/logos/carro.png" alt="Icono Esfuerzo">
-              <h5>Por tu esfuerzo</h5>
-              <p>Reconocemos tu esfuerzo con incentivos para ti y tu hogar, en donde los podrás combinar y acumular como quieras.</p>
-          </div>
+        <div class="benefits-item">
+          <img src="Img/logos/ventas.png" alt="Icono Ventas">
+          <h5>Por tus ventas</h5>
+          <p>Dependiendo de cuanto vendas, gana hasta 35% de descuento en tus compras.</p>
+        </div>
+        <div class="benefits-item">
+          <img src="Img/logos/caja.png" alt="Icono Kit de Bienvenida">
+          <h5>Por tu Kit de Bienvenida</h5>
+          <p>Podrás hacer demostraciones a tus clientes o vender los productos de tu kit.</p>
+        </div>
+        <div class="benefits-item">
+          <img src="Img/logos/regalo.png" alt="Icono Logros en ventas">
+          <h5>Por tus logros en ventas</h5>
+          <p>Te reconocemos con productos Yanbal por tus logros de venta durante tus 3 primeras campañas.</p>
+        </div>
+        <div class="benefits-item">
+          <img src="Img/logos/carro.png" alt="Icono Esfuerzo">
+          <h5>Por tu esfuerzo</h5>
+          <p>Reconocemos tu esfuerzo con incentivos para ti y tu hogar, en donde los podrás combinar y acumular como
+            quieras.</p>
+        </div>
       </div>
-  </div>
-<div class="p-2" data-aos="fade-right">
-  <h4 class="fw-bold h2 p-2 text-center" id="productos">¿Te gustaria vender <a class="text-decoration-underline">YANBAL</a>? pulsa<a href="exp.html">AQUI</a> y te explicaremos.</h4>
-</div>
-
-<!---Menu de secciones-->
-<!-- Sección de Iconos -->
-<section class="container my-5" id="productos">
-  <div class="text-center mb-4" data-aos="fade-up">
-    <h2 class="fw-bold">Nuestros Productos</h2>
-    <p>Explora nuestra variedad de productos para el cuidado personal.</p>
-  </div>
-  <div class="row text-center">
-    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-      <a href="#LOCIONES">
-        <div class="card p-4 shadow-sm border-0">
-          <div class="card-body">
-            <img src="Img/Lociones/lociones/winer.jpg" class="mb-3" alt="Lociones" style="width: 100px; height: 100px;">
-            <h5 class="card-title">Lociones</h5>
-            <p class="card-text">Descubre nuestra colección de lociones fragantes.</p>
-          </div>
-        </div>
-      </a>
     </div>
-    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-      <a href="#DESODORANTES">
-        <div class="card p-4 shadow-sm border-0">
-          <div class="card-body">
-            <img src="Img/Lociones/desodorante/desodorante you.jpg" class="mb-3" alt="Desodorantes" style="width: 100px; height: 100px;">
-            <h5 class="card-title">Desodorantes</h5>
-            <p class="card-text">Mantente fresco y seguro con nuestros desodorantes.</p>
-          </div>
-        </div>
-      </a>
+    <div class="p-2" data-aos="fade-right">
+      <h4 class="fw-bold h2 p-2 text-center" id="productos">¿Te gustaria vender <a
+          class="text-decoration-underline">YANBAL</a>? pulsa<a href="exp.html">AQUI</a> y te explicaremos.</h4>
     </div>
-    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-      <a href="#CREMAS">
-        <div class="card p-4 shadow-sm border-0">
-          <div class="card-body">
-            <img src="Img/Lociones/cremas y mas/durazno.webp" class="mb-3" alt="Cremas" style="width: 150px; height: 125px;">
-            <h5 class="card-title">Cremas</h5>
-            <p class="card-text">Hidrata tu piel con nuestras cremas nutritivas.</p>
-          </div>
+
+    <!---Menu de secciones-->
+    <!-- Sección de Iconos -->
+    <section class="container my-5" id="productos">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="fw-bold">Nuestros Productos</h2>
+        <p>Explora nuestra variedad de productos para el cuidado personal.</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="#LOCIONES">
+            <div class="card p-4 shadow-sm border-0">
+              <div class="card-body">
+                <img src="Img/Lociones/lociones/winer.jpg" class="mb-3" alt="Lociones"
+                  style="width: 100px; height: 100px;">
+                <h5 class="card-title">Lociones</h5>
+                <p class="card-text">Descubre nuestra colección de lociones fragantes.</p>
+              </div>
+            </div>
+          </a>
         </div>
-      </a>
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="#DESODORANTES">
+            <div class="card p-4 shadow-sm border-0">
+              <div class="card-body">
+                <img src="Img/Lociones/desodorante/desodorante you.jpg" class="mb-3" alt="Desodorantes"
+                  style="width: 100px; height: 100px;">
+                <h5 class="card-title">Desodorantes</h5>
+                <p class="card-text">Mantente fresco y seguro con nuestros desodorantes.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <a href="#CREMAS">
+            <div class="card p-4 shadow-sm border-0">
+              <div class="card-body">
+                <img src="Img/Lociones/cremas y mas/durazno.webp" class="mb-3" alt="Cremas"
+                  style="width: 150px; height: 125px;">
+                <h5 class="card-title">Cremas</h5>
+                <p class="card-text">Hidrata tu piel con nuestras cremas nutritivas.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div id="LOCIONES"></div>
+    <!--secion lociones-->
+    <div class="p-2" data-aos="zoom-in">
+      <h2 class="fw-bold h2 p-2 text-center">LOCIONES</h2>
     </div>
-  </div>
-</section>
-<div id="LOCIONES"></div>
-<!--secion lociones-->
-<div class="p-2" data-aos="zoom-in">
-    <h2 class="fw-bold h2 p-2 text-center">LOCIONES</h2>
-  </div>
 
-<!---productos -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      const products = [
-      { title: "Blue", price: "$80.000", imgSrc: "Img/Lociones/lociones/blue locion.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Musk-Fresh", price: "$40.000", imgSrc: "Img/Lociones/lociones/Musk-Fresh.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Nitro", price: "$40.000", imgSrc: "Img/Lociones/lociones/nitro.png", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Adrenaline", price: "$80.000", imgSrc: "Img/Lociones/lociones/adrenaline roja.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Adrenaline EAU DE TOILETTE", price: "$80.000", imgSrc: "Img/Lociones/lociones/adrenaline.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Alpha", price: "$80.000", imgSrc: "Img/Lociones/lociones/alpha.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Blue Glacial", price: "$80.000", imgSrc: "Img/Lociones/lociones/blueGlacial.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Comando", price: "$20.000", imgSrc: "Img/Lociones/lociones/comando.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Dancing", price: "$40.000", imgSrc: "Img/Lociones/lociones/dancing.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Dream cambiar foto", price: "$65.000", imgSrc: "Img/Lociones/lociones/dream.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Empire", price: "$80.000", imgSrc: "Img/Lociones/lociones/empire lebel.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Homme", price: "$90.000", imgSrc: "Img/Lociones/lociones/homme.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "ID", price: "$70.000", imgSrc: "Img/Lociones/lociones/id.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Liassion", price: "$80.000", imgSrc: "Img/Lociones/lociones/liassion.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Limage", price: "$60.000", imgSrc: "Img/Lociones/lociones/limage.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Nitro Ocean", price: "$45.000", imgSrc: "Img/Lociones/lociones/nitroOcean.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Red power", price: "$80.000", imgSrc: "Img/Lociones/lociones/real power.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Senses", price: "$20.000", imgSrc: "Img/Lociones/lociones/sense.png", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Soy Sexy", price: "$30.000", imgSrc: "Img/Lociones/lociones/soy sexy.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Sweet Black exclusive", price: "$36.000", imgSrc: "Img/Lociones/lociones/sweet black cyzone exclusive.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Vibranza", price: "$60.000", imgSrc: "Img/Lociones/lociones/vibranza.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Mitica", price: "$80.000", imgSrc: "Img/Lociones/lociones/mitica.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Minichips", price: "$20.000", imgSrc: "Img/Lociones/lociones/minichips.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Mon l'bel gold", price: "$80.000", imgSrc: "Img/Lociones/lociones/mon l'bel gold.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Dancing night", price: "$40.000", imgSrc: "Img/Lociones/lociones/dancing night.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Selecto", price: "$80.000", imgSrc: "Img/Lociones/lociones/select.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Sunset", price: "$54.000", imgSrc: "Img/Lociones/lociones/sunset.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Prinset", price: "$25.000", imgSrc: "Img/Lociones/lociones/print.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Winner", price: "$65.000", imgSrc: "Img/Lociones/lociones/winner.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Agu regrescante", price: "$55.000", imgSrc: "Img/Lociones/lociones/agur.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-          
-      ];
+    <!---productos -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const products = [
+          { title: "Blue", price: "$80.000", imgSrc: "Img/Lociones/lociones/blue locion.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Musk-Fresh", price: "$40.000", imgSrc: "Img/Lociones/lociones/Musk-Fresh.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Nitro", price: "$40.000", imgSrc: "Img/Lociones/lociones/nitro.png", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Adrenaline", price: "$80.000", imgSrc: "Img/Lociones/lociones/adrenaline roja.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Adrenaline EAU DE TOILETTE", price: "$80.000", imgSrc: "Img/Lociones/lociones/adrenaline.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Alpha", price: "$80.000", imgSrc: "Img/Lociones/lociones/alpha.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Blue Glacial", price: "$80.000", imgSrc: "Img/Lociones/lociones/blueGlacial.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Comando", price: "$20.000", imgSrc: "Img/Lociones/lociones/comando.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Dancing", price: "$40.000", imgSrc: "Img/Lociones/lociones/dancing.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Dream cambiar foto", price: "$65.000", imgSrc: "Img/Lociones/lociones/dream.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Empire", price: "$80.000", imgSrc: "Img/Lociones/lociones/empire lebel.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Homme", price: "$90.000", imgSrc: "Img/Lociones/lociones/homme.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "ID", price: "$70.000", imgSrc: "Img/Lociones/lociones/id.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Liassion", price: "$80.000", imgSrc: "Img/Lociones/lociones/liassion.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Limage", price: "$60.000", imgSrc: "Img/Lociones/lociones/limage.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Nitro Ocean", price: "$45.000", imgSrc: "Img/Lociones/lociones/nitroOcean.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Red power", price: "$80.000", imgSrc: "Img/Lociones/lociones/real power.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Senses", price: "$20.000", imgSrc: "Img/Lociones/lociones/sense.png", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Soy Sexy", price: "$30.000", imgSrc: "Img/Lociones/lociones/soy sexy.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Sweet Black exclusive", price: "$36.000", imgSrc: "Img/Lociones/lociones/sweet black cyzone exclusive.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Vibranza", price: "$60.000", imgSrc: "Img/Lociones/lociones/vibranza.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Mitica", price: "$80.000", imgSrc: "Img/Lociones/lociones/mitica.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Minichips", price: "$20.000", imgSrc: "Img/Lociones/lociones/minichips.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Mon l'bel gold", price: "$80.000", imgSrc: "Img/Lociones/lociones/mon l'bel gold.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Dancing night", price: "$40.000", imgSrc: "Img/Lociones/lociones/dancing night.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Selecto", price: "$80.000", imgSrc: "Img/Lociones/lociones/select.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Sunset", price: "$54.000", imgSrc: "Img/Lociones/lociones/sunset.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Prinset", price: "$25.000", imgSrc: "Img/Lociones/lociones/print.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Winner", price: "$65.000", imgSrc: "Img/Lociones/lociones/winner.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+          { title: "Agu regrescante", price: "$55.000", imgSrc: "Img/Lociones/lociones/agur.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
 
-      const container = document.getElementById("loci");
-      const pagination = document.getElementById("pagination");
+        ];
 
-      const itemsPerPage = 6;
-      let currentPage = 1;
+        const container = document.getElementById("loci");
+        const pagination = document.getElementById("pagination");
 
-      function displayProducts(page) {
+        const itemsPerPage = 6;
+        let currentPage = 1;
+
+        function displayProducts(page) {
           container.innerHTML = "";
           const start = (page - 1) * itemsPerPage;
           const end = start + itemsPerPage;
           const paginatedProducts = products.slice(start, end);
 
           paginatedProducts.forEach(product => {
-              const colDiv = document.createElement("div");
-              colDiv.className = "col-md-4 mb-4";
+            const colDiv = document.createElement("div");
+            colDiv.className = "col-md-4 mb-4";
 
-              const cardDiv = document.createElement("div");
-              cardDiv.className = "card";
+            const cardDiv = document.createElement("div");
+            cardDiv.className = "card";
 
-              const link = document.createElement("a");
-              link.href = product.link;
-              link.target = "_blank";
+            const link = document.createElement("a");
+            link.href = product.link;
+            link.target = "_blank";
 
-              const img = document.createElement("img");
-              img.className = "card-img-top";
-              img.src = product.imgSrc;
-              img.alt = product.title;
+            const img = document.createElement("img");
+            img.className = "card-img-top";
+            img.src = product.imgSrc;
+            img.alt = product.title;
 
-              const cardBody = document.createElement("div");
-              cardBody.className = "card-body text-center";
+            const cardBody = document.createElement("div");
+            cardBody.className = "card-body text-center";
 
-              const cardTitle = document.createElement("h5");
-              cardTitle.className = "card-title";
-              cardTitle.innerText = product.title;
+            const cardTitle = document.createElement("h5");
+            cardTitle.className = "card-title";
+            cardTitle.innerText = product.title;
 
-              const cardText = document.createElement("p");
-              cardText.className = "card-text";
-              cardText.innerText = product.price;
+            const cardText = document.createElement("p");
+            cardText.className = "card-text";
+            cardText.innerText = product.price;
 
-              link.appendChild(img);
-              cardDiv.appendChild(link);
-              cardDiv.appendChild(cardBody);
-              cardBody.appendChild(cardTitle);
-              cardBody.appendChild(cardText);
-              colDiv.appendChild(cardDiv);
-              container.appendChild(colDiv);
+            link.appendChild(img);
+            cardDiv.appendChild(link);
+            cardDiv.appendChild(cardBody);
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+            colDiv.appendChild(cardDiv);
+            container.appendChild(colDiv);
           });
-      }
+        }
 
-      function updatePagination() {
+        function updatePagination() {
           pagination.innerHTML = "";
           const pageCount = Math.ceil(products.length / itemsPerPage);
           for (let i = 1; i <= pageCount; i++) {
-              const pageItem = document.createElement("li");
-              pageItem.className = "page-item" + (i === currentPage ? " active" : "");
-              const pageLink = document.createElement("a");
-              pageLink.className = "page-link";
-              pageLink.href = "#";
-              pageLink.innerText = i;
-              pageLink.addEventListener("click", function(event) {
-                  event.preventDefault();
-                  currentPage = i;
-                  displayProducts(currentPage);
-                  updatePagination();
-              });
-              pageItem.appendChild(pageLink);
-              pagination.appendChild(pageItem);
+            const pageItem = document.createElement("li");
+            pageItem.className = "page-item" + (i === currentPage ? " active" : "");
+            const pageLink = document.createElement("a");
+            pageLink.className = "page-link";
+            pageLink.href = "#";
+            pageLink.innerText = i;
+            pageLink.addEventListener("click", function (event) {
+              event.preventDefault();
+              currentPage = i;
+              displayProducts(currentPage);
+              updatePagination();
+            });
+            pageItem.appendChild(pageLink);
+            pagination.appendChild(pageItem);
           }
-      }
+        }
 
-      displayProducts(currentPage);
-      updatePagination();
-  });
-</script>
-</head>
-<body>
-<div class="container mt-5" data-aos="fade-up">
-  <div id="loci" class="row">
-      <!-- Las tarjetas de productos se generarán aquí -->
-  </div>
-  <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center mt-4" id="pagination">
-          <!-- Los números de paginación se generarán aquí -->
-      </ul>
-  </nav>
-</div>
-<!--secion desodorantes-->
-<div id="DESODORANTES"></div>
-<div class="p-2" data-aos="zoom-in">
-  <h2 class="fw-bold h2 p-2 text-center">DESODORANTES</h2>
-</div>
+        displayProducts(currentPage);
+        updatePagination();
+      });
+    </script>
+    </head>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      const products = [
-          
-      { title: "You", price: "$9.000", imgSrc: "Img/Lociones/desodorante/desodorante you.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Solo", price: "$11.900", imgSrc: "Img/Lociones/desodorante/solo desodorante.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "43N°", price: "$11.900", imgSrc: "Img/Lociones/desodorante/43n.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Dendur", price: "$11.900", imgSrc: "Img/Lociones/desodorante/dendur.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "D'orsay", price: "$9.000", imgSrc: "Img/Lociones/desodorante/d'orsay.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Effective", price: "$11.900", imgSrc: "Img/Lociones/desodorante/effective.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Fantasia", price: "$9.000", imgSrc: "Img/Lociones/desodorante/fantaasia.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Gaia", price: "$11.900", imgSrc: "Img/Lociones/desodorante/gaia.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Leyenda", price: "$9.000", imgSrc: "Img/Lociones/desodorante/leyenda.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Magnat", price: "$9.000", imgSrc: "Img/Lociones/desodorante/magnat deso.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "OHM", price: "$9.000", imgSrc: "Img/Lociones/desodorante/ohm.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Pulso", price: "$9.000", imgSrc: "Img/Lociones/desodorante/puls.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-
-          
-          
-          
-          
-      ];
-
-      const container = document.getElementById("des");
-      const pagination = document.getElementById("pagdes");
-
-      const itemsPerPage = 6;
-      let currentPage = 1;
-
-      function displayProducts(page) {
-          container.innerHTML = "";
-          const start = (page - 1) * itemsPerPage;
-          const end = start + itemsPerPage;
-          const paginatedProducts = products.slice(start, end);
-
-          paginatedProducts.forEach(product => {
-              const colDiv = document.createElement("div");
-              colDiv.className = "col-md-4 mb-4";
-
-              const cardDiv = document.createElement("div");
-              cardDiv.className = "card";
-
-              const link = document.createElement("a");
-              link.href = product.link;
-              link.target = "_blank";
-
-              const img = document.createElement("img");
-              img.className = "card-img-top";
-              img.src = product.imgSrc;
-              img.alt = product.title;
-
-              const cardBody = document.createElement("div");
-              cardBody.className = "card-body text-center";
-
-              const cardTitle = document.createElement("h5");
-              cardTitle.className = "card-title";
-              cardTitle.innerText = product.title;
-
-              const cardText = document.createElement("p");
-              cardText.className = "card-text";
-              cardText.innerText = product.price;
-
-              link.appendChild(img);
-              cardDiv.appendChild(link);
-              cardDiv.appendChild(cardBody);
-              cardBody.appendChild(cardTitle);
-              cardBody.appendChild(cardText);
-              colDiv.appendChild(cardDiv);
-              container.appendChild(colDiv);
-          });
-      }
-
-      function updatePagination() {
-          pagination.innerHTML = "";
-          const pageCount = Math.ceil(products.length / itemsPerPage);
-          for (let i = 1; i <= pageCount; i++) {
-              const pageItem = document.createElement("li");
-              pageItem.className = "page-item" + (i === currentPage ? " active" : "");
-              const pageLink = document.createElement("a");
-              pageLink.className = "page-link";
-              pageLink.href = "#";
-              pageLink.innerText = i;
-              pageLink.addEventListener("click", function(event) {
-                  event.preventDefault();
-                  currentPage = i;
-                  displayProducts(currentPage);
-                  updatePagination();
-              });
-              pageItem.appendChild(pageLink);
-              pagination.appendChild(pageItem);
-          }
-      }
-
-      displayProducts(currentPage);
-      updatePagination();
-  });
-</script>
-</head>
-<body>
-<div class="container mt-5" data-aos="fade-right">
-  <div id="des" class="row">
-      <!-- Las tarjetas de productos se generarán aquí -->
-  </div>
-  <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center mt-4" id="pagdes">
-          <!-- Los números de paginación se generarán aquí -->
-      </ul>
-  </nav>
-</div>
-</head>
-
-
-<body>
-<div class="container mt-5"data-aos="flip-left">
-   <div id="desodorante" class="row">
-       <!-- Las tarjetas de productos se generarán aquí -->
-   </div>
-</div>
-
-<!--secion desodorantes-->
-<div id="CREMAS"></div>
-<div class="p-2" data-aos="flip-left">
-  <h2 class="fw-bold h2 p-2 text-center">CREMAS Y MAS...</h2>
-</div>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      const products = [
-      { title: "Cream durazno", price: "$38.000", imgSrc: "Img/Lociones/cremas y mas/durazno.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Bloqueador 130mg", price: "$90.000", imgSrc: "Img/Lociones/cremas y mas/bloqueador.png", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Vibranza Corporal", price: "$25.000", imgSrc: "Img/Lociones/lociones/vibranza corporal.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Botanology", price: "$16.000", imgSrc: "Img/Lociones/cremas y mas/botanology.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Cream frim", price: "$40.000", imgSrc: "Img/Lociones/lociones/cream frim.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Demaquillador lbel", price: "$36.000", imgSrc: "Img/Lociones/cremas y mas/essential.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Jabon Intimo", price: "$10.000", imgSrc: "Img/Lociones/cremas y mas/jabon intimo.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Jabon", price: "$10.000", imgSrc: "Img/Lociones/cremas y mas/jabon.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      { title: "Splahs Mencoolice", price: "$25.000", imgSrc: "Img/Lociones/cremas y mas/Mencoolice.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      
-      { title: "tinturado castaño", price: "$14.000", imgSrc: "Img/Lociones/cremas y mas/tinturado.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
-      
-          
-      ];
-
-      const container = document.getElementById("crema");
-      const pagination = document.getElementById("pagcre");
-
-      const itemsPerPage = 6;
-      let currentPage = 1;
-
-      function displayProducts(page) {
-          container.innerHTML = "";
-          const start = (page - 1) * itemsPerPage;
-          const end = start + itemsPerPage;
-          const paginatedProducts = products.slice(start, end);
-
-          paginatedProducts.forEach(product => {
-              const colDiv = document.createElement("div");
-              colDiv.className = "col-md-4 mb-4";
-
-              const cardDiv = document.createElement("div");
-              cardDiv.className = "card";
-
-              const link = document.createElement("a");
-              link.href = product.link;
-              link.target = "_blank";
-
-              const img = document.createElement("img");
-              img.className = "card-img-top";
-              img.src = product.imgSrc;
-              img.alt = product.title;
-
-              const cardBody = document.createElement("div");
-              cardBody.className = "card-body text-center";
-
-              const cardTitle = document.createElement("h5");
-              cardTitle.className = "card-title";
-              cardTitle.innerText = product.title;
-
-              const cardText = document.createElement("p");
-              cardText.className = "card-text";
-              cardText.innerText = product.price;
-
-              link.appendChild(img);
-              cardDiv.appendChild(link);
-              cardDiv.appendChild(cardBody);
-              cardBody.appendChild(cardTitle);
-              cardBody.appendChild(cardText);
-              colDiv.appendChild(cardDiv);
-              container.appendChild(colDiv);
-          });
-      }
-
-      function updatePagination() {
-          pagination.innerHTML = "";
-          const pageCount = Math.ceil(products.length / itemsPerPage);
-          for (let i = 1; i <= pageCount; i++) {
-              const pageItem = document.createElement("li");
-              pageItem.className = "page-item" + (i === currentPage ? " active" : "");
-              const pageLink = document.createElement("a");
-              pageLink.className = "page-link";
-              pageLink.href = "#";
-              pageLink.innerText = i;
-              pageLink.addEventListener("click", function(event) {
-                  event.preventDefault();
-                  currentPage = i;
-                  displayProducts(currentPage);
-                  updatePagination();
-              });
-              pageItem.appendChild(pageLink);
-              pagination.appendChild(pageItem);
-          }
-      }
-
-      displayProducts(currentPage);
-      updatePagination();
-  });
-</script>
-</head>
-<body>
-<div class="container mt-5" data-aos="flip-left">
-  <div id="crema" class="row">
-      <!-- Las tarjetas de productos se generarán aquí -->
-  </div>
-  <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center mt-4" id="pagcre">
-          <!-- Los números de paginación se generarán aquí -->
-      </ul>
-  </nav>
-</div>
-</head>
-
-
-
-
-  <!-- Footer -->
-  <footer class="footer-custom" data-aos="fade-up"
-  data-aos-duration="1000">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6 mb-4">
-          <h5>Contacto</h5>
-          <ul class="list-unstyled">
-            <li>Teléfono: <a href="tel:301-441-4701"></a></li>
-            <a href="https://wa.me/message/Q4IDJZDEGDYYO1" aria-label="Facebook" target="_blank"><i class="fab fa-facebook">301-441-4701</i></a>
-            <li>Email:</li>
-            <a href="mailto:papeleria.s27@gmail.com" aria-label="Facebook"><i class="fab fa-facebook">papeleria.s27@gmail.com</i></a>
+    <body>
+      <div class="container mt-5" data-aos="fade-up">
+        <div id="loci" class="row">
+          <!-- Las tarjetas de productos se generarán aquí -->
+        </div>
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center mt-4" id="pagination">
+            <!-- Los números de paginación se generarán aquí -->
           </ul>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-          <h5>Redes Sociales</h5>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/papeleria.soro" aria-label="Facebook"><i class="fab fa-facebook">facebook</i></a>
-            <!-- Añadir más iconos de redes sociales -->
+        </nav>
+      </div>
+      <!--secion desodorantes-->
+      <div id="DESODORANTES"></div>
+      <div class="p-2" data-aos="zoom-in">
+        <h2 class="fw-bold h2 p-2 text-center">DESODORANTES</h2>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const products = [
+
+            { title: "You", price: "$9.000", imgSrc: "Img/Lociones/desodorante/desodorante you.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "Solo", price: "$11.900", imgSrc: "Img/Lociones/desodorante/solo desodorante.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "43N°", price: "$11.900", imgSrc: "Img/Lociones/desodorante/43n.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "Dendur", price: "$11.900", imgSrc: "Img/Lociones/desodorante/dendur.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "D'orsay", price: "$9.000", imgSrc: "Img/Lociones/desodorante/d'orsay.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "Effective", price: "$11.900", imgSrc: "Img/Lociones/desodorante/effective.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "Fantasia", price: "$9.000", imgSrc: "Img/Lociones/desodorante/fantaasia.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "Gaia", price: "$11.900", imgSrc: "Img/Lociones/desodorante/gaia.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "Leyenda", price: "$9.000", imgSrc: "Img/Lociones/desodorante/leyenda.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "Magnat", price: "$9.000", imgSrc: "Img/Lociones/desodorante/magnat deso.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "OHM", price: "$9.000", imgSrc: "Img/Lociones/desodorante/ohm.jpg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+            { title: "Pulso", price: "$9.000", imgSrc: "Img/Lociones/desodorante/puls.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+
+
+
+
+
+          ];
+
+          const container = document.getElementById("des");
+          const pagination = document.getElementById("pagdes");
+
+          const itemsPerPage = 6;
+          let currentPage = 1;
+
+          function displayProducts(page) {
+            container.innerHTML = "";
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedProducts = products.slice(start, end);
+
+            paginatedProducts.forEach(product => {
+              const colDiv = document.createElement("div");
+              colDiv.className = "col-md-4 mb-4";
+
+              const cardDiv = document.createElement("div");
+              cardDiv.className = "card";
+
+              const link = document.createElement("a");
+              link.href = product.link;
+              link.target = "_blank";
+
+              const img = document.createElement("img");
+              img.className = "card-img-top";
+              img.src = product.imgSrc;
+              img.alt = product.title;
+
+              const cardBody = document.createElement("div");
+              cardBody.className = "card-body text-center";
+
+              const cardTitle = document.createElement("h5");
+              cardTitle.className = "card-title";
+              cardTitle.innerText = product.title;
+
+              const cardText = document.createElement("p");
+              cardText.className = "card-text";
+              cardText.innerText = product.price;
+
+              link.appendChild(img);
+              cardDiv.appendChild(link);
+              cardDiv.appendChild(cardBody);
+              cardBody.appendChild(cardTitle);
+              cardBody.appendChild(cardText);
+              colDiv.appendChild(cardDiv);
+              container.appendChild(colDiv);
+            });
+          }
+
+          function updatePagination() {
+            pagination.innerHTML = "";
+            const pageCount = Math.ceil(products.length / itemsPerPage);
+            for (let i = 1; i <= pageCount; i++) {
+              const pageItem = document.createElement("li");
+              pageItem.className = "page-item" + (i === currentPage ? " active" : "");
+              const pageLink = document.createElement("a");
+              pageLink.className = "page-link";
+              pageLink.href = "#";
+              pageLink.innerText = i;
+              pageLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                currentPage = i;
+                displayProducts(currentPage);
+                updatePagination();
+              });
+              pageItem.appendChild(pageLink);
+              pagination.appendChild(pageItem);
+            }
+          }
+
+          displayProducts(currentPage);
+          updatePagination();
+        });
+      </script>
+      </head>
+
+      <body>
+        <div class="container mt-5" data-aos="fade-right">
+          <div id="des" class="row">
+            <!-- Las tarjetas de productos se generarán aquí -->
           </div>
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center mt-4" id="pagdes">
+              <!-- Los números de paginación se generarán aquí -->
+            </ul>
+          </nav>
         </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-          <h5>Dirección</h5>
-          <p>Av4 #2-42 palmaseca</p>
-        </div>
-        <div class="col-md-3 col-sm-6 text-center mb-4">
-          <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" class="footer-logo">
-          <h5><a href="what.html">¿Quienes somos? </a></h5>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127434.5548822756!2d-76.49730571751309!3d3.5109598714967127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a07555a296a91%3A0x4e51e8074e54052d!2sPapeleria%20S!5e0!3m2!1ses!2sco!4v1720125877261!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-12 text-center">
-          <p>&copy; 2023 Papeleria S. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- FIN DE Footer -->
-      </header>   
-      
+        </head>
+
+
+        <body>
+          <div class="container mt-5" data-aos="flip-left">
+            <div id="desodorante" class="row">
+              <!-- Las tarjetas de productos se generarán aquí -->
+            </div>
+          </div>
+
+          <!--secion desodorantes-->
+          <div id="CREMAS"></div>
+          <div class="p-2" data-aos="flip-left">
+            <h2 class="fw-bold h2 p-2 text-center">CREMAS Y MAS...</h2>
+          </div>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const products = [
+                { title: "Cream durazno", price: "$38.000", imgSrc: "Img/Lociones/cremas y mas/durazno.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+                { title: "Bloqueador 130mg", price: "$90.000", imgSrc: "Img/Lociones/cremas y mas/bloqueador.png", link: "https://wa.me/message/OTREY67XKAE3K1" },
+                { title: "Vibranza Corporal", price: "$25.000", imgSrc: "Img/Lociones/lociones/vibranza corporal.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+                { title: "Botanology", price: "$16.000", imgSrc: "Img/Lociones/cremas y mas/botanology.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+                { title: "Cream frim", price: "$40.000", imgSrc: "Img/Lociones/lociones/cream frim.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+                { title: "Demaquillador lbel", price: "$36.000", imgSrc: "Img/Lociones/cremas y mas/essential.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+                { title: "Jabon Intimo", price: "$10.000", imgSrc: "Img/Lociones/cremas y mas/jabon intimo.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+                { title: "Jabon", price: "$10.000", imgSrc: "Img/Lociones/cremas y mas/jabon.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+                { title: "Splahs Mencoolice", price: "$25.000", imgSrc: "Img/Lociones/cremas y mas/Mencoolice.jpeg", link: "https://wa.me/message/OTREY67XKAE3K1" },
+
+                { title: "tinturado castaño", price: "$14.000", imgSrc: "Img/Lociones/cremas y mas/tinturado.webp", link: "https://wa.me/message/OTREY67XKAE3K1" },
+
+
+              ];
+
+              const container = document.getElementById("crema");
+              const pagination = document.getElementById("pagcre");
+
+              const itemsPerPage = 6;
+              let currentPage = 1;
+
+              function displayProducts(page) {
+                container.innerHTML = "";
+                const start = (page - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                const paginatedProducts = products.slice(start, end);
+
+                paginatedProducts.forEach(product => {
+                  const colDiv = document.createElement("div");
+                  colDiv.className = "col-md-4 mb-4";
+
+                  const cardDiv = document.createElement("div");
+                  cardDiv.className = "card";
+
+                  const link = document.createElement("a");
+                  link.href = product.link;
+                  link.target = "_blank";
+
+                  const img = document.createElement("img");
+                  img.className = "card-img-top";
+                  img.src = product.imgSrc;
+                  img.alt = product.title;
+
+                  const cardBody = document.createElement("div");
+                  cardBody.className = "card-body text-center";
+
+                  const cardTitle = document.createElement("h5");
+                  cardTitle.className = "card-title";
+                  cardTitle.innerText = product.title;
+
+                  const cardText = document.createElement("p");
+                  cardText.className = "card-text";
+                  cardText.innerText = product.price;
+
+                  link.appendChild(img);
+                  cardDiv.appendChild(link);
+                  cardDiv.appendChild(cardBody);
+                  cardBody.appendChild(cardTitle);
+                  cardBody.appendChild(cardText);
+                  colDiv.appendChild(cardDiv);
+                  container.appendChild(colDiv);
+                });
+              }
+
+              function updatePagination() {
+                pagination.innerHTML = "";
+                const pageCount = Math.ceil(products.length / itemsPerPage);
+                for (let i = 1; i <= pageCount; i++) {
+                  const pageItem = document.createElement("li");
+                  pageItem.className = "page-item" + (i === currentPage ? " active" : "");
+                  const pageLink = document.createElement("a");
+                  pageLink.className = "page-link";
+                  pageLink.href = "#";
+                  pageLink.innerText = i;
+                  pageLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    currentPage = i;
+                    displayProducts(currentPage);
+                    updatePagination();
+                  });
+                  pageItem.appendChild(pageLink);
+                  pagination.appendChild(pageItem);
+                }
+              }
+
+              displayProducts(currentPage);
+              updatePagination();
+            });
+          </script>
+          </head>
+
+          <body>
+            <div class="container mt-5" data-aos="flip-left">
+              <div id="crema" class="row">
+                <!-- Las tarjetas de productos se generarán aquí -->
+              </div>
+              <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mt-4" id="pagcre">
+                  <!-- Los números de paginación se generarán aquí -->
+                </ul>
+              </nav>
+            </div>
+            </head>
+
+
+
+
+            <!-- Footer -->
+            <footer class="footer-custom" data-aos="fade-up" data-aos-duration="1000">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-3 col-sm-6 mb-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                      <li>Teléfono: <a href="tel:301-441-4701"></a></li>
+                      <a href="https://wa.me/message/Q4IDJZDEGDYYO1" aria-label="Facebook" target="_blank"><i
+                          class="fab fa-facebook">301-441-4701</i></a>
+                      <li>Email:</li>
+                      <a href="mailto:papeleria.s27@gmail.com" aria-label="Facebook"><i
+                          class="fab fa-facebook">papeleria.s27@gmail.com</i></a>
+                    </ul>
+                  </div>
+                  <div class="col-md-3 col-sm-6 mb-4">
+                    <h5>Redes Sociales</h5>
+                    <div class="footer-social">
+                      <a href="https://www.facebook.com/papeleria.soro" aria-label="Facebook"><i
+                          class="fab fa-facebook">facebook</i></a>
+                      <!-- Añadir más iconos de redes sociales -->
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6 mb-4">
+                    <h5>Dirección</h5>
+                    <p>Av4 #2-42 palmaseca</p>
+                  </div>
+                  <div class="col-md-3 col-sm-6 text-center mb-4">
+                    <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" class="footer-logo">
+                    <h5><a href="what.html">¿Quienes somos? </a></h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127434.5548822756!2d-76.49730571751309!3d3.5109598714967127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a07555a296a91%3A0x4e51e8074e54052d!2sPapeleria%20S!5e0!3m2!1ses!2sco!4v1720125877261!5m2!1ses!2sco"
+                      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-12 text-center">
+                    <p>&copy; 2023 Papeleria S. Todos los derechos reservados.</p>
+                  </div>
+                </div>
+              </div>
+            </footer>
+            <!-- FIN DE Footer -->
+  </header>
 
 
 
 
 
-       <!-- Bootstrap JavaScript -->
-       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-       <script> AOS.init();</script>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script> AOS.init();</script>
 </body>
+
 </html>

@@ -225,42 +225,102 @@ box-shadow:  -10px -10px 11px #8f8f8f,
 }
 
 .fixed-icon {
-  position: fixed;
-  top: 95%;
-  left: 89%;
+  position: fixed; 
+  top: 90%;
+  /*Ubicacion del icono */
+  left: 93%;
   transform: translateY(-50%);
   z-index: 9999;
-  /* Asegura que el ícono esté por encima de otros elementos */
-  background-color: rgba(0, 226, 19, 0);
+  /*Peso del icono para que siempre este encima*/
+  background-color: rgba(3, 253, 24, 0);
   /* Fondo blanco semi-transparente */
   border: 1px solid #e96e93;
   /* Borde del ícono */
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
   /* Bordes redondeados solo en la esquina derecha */
 }
 
 .fixed-icon img {
-  width: 90px;
+  width: 80px;
   /* Ajusta el tamaño de la imagen según tus necesidades */
   height: auto;
   /* Mantiene la proporción de la imagen */
 }
-
-/* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
-  .fixed-icon {
-    left: 70%;
-    /* Ajusta la posición horizontal del ícono para pantallas más pequeñas */
-  }
+.fixed-icon h6{
+  font-size: medium;
+}
+.fixed-icon:hover {
+  background-color: #f3a0b9;
 }
 
-@media (max-width: 480px) {
+/* Media query para pantallas más pequeñas */
+@media (max-width: 1555px) {
   .fixed-icon {
-    left: 60%;
-    /* Ajusta la posición horizontal del ícono para pantallas muy pequeñas */
+    left: 92%;
+    
+}
+}
+@media (max-width: 1100px) {
+  .fixed-icon {
+    left: 89%;
+    
+}
+
+.fixed-icon h6{
+  font-size: medium;
+}
+
+.fixed-icon img {
+  width: 50px;
+  /* Ajusta el tamaño de la imagen según tus necesidades */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+}
+}
+
+@media (max-width: 865px) {
+  .fixed-icon {
+    left: 87%;
+    
+}
+
+.fixed-icon h6{
+  font-size: medium;
+}
+
+.fixed-icon img {
+  width: 50px;
+  /* Ajusta el tamaño de la imagen según tus necesidades */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+}
+}
+
+@media (max-width: 768px) {
+  .fixed-icon {
+      left: 85%;
+      
   }
 
 
+}
+
+
+@media (max-width: 715px) {
+  .fixed-icon {
+      left: 83%;
+      
+  }
+
+
+}
+
+@media (max-width: 580px) {
+  .fixed-icon {
+    
+      display: none;
+      /* Ajusta la posición horizontal del ícono para pantallas muy pequeñas */
+  }
 }
 
 .justi {

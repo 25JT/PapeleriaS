@@ -14,19 +14,44 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css">
-
+  
 
 </head>
 
 <body>
 
   <!-- Icono -->
-  <div class="fixed-icon">
-    <a href="https://wa.me/message/Q4IDJZDEGDYYO1" target="_blank">
-      <h6 class="text-danger">Contactanos</h6>
-      <img src="Img/logos/LOGO SIN NOMBRE.png" alt="Icono">
+  <div class="fixed-icon" id="fixed-icon">
+    <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+        <h6 class="text-danger">Contactanos</h6>
+        <img src="Img/logos/LOGO SIN NOMBRE.png" alt="Icono">
     </a>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Escribenos un mensaje</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form>
+                  <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Mensaje:</label>
+                      <textarea class="form-control" id="message-text" maxlength="100"></textarea>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="mesj()">Enviar
+                  Mensaje</button>
+          </div>
+      </div>
   </div>
+</div>
+
 
 
   <!-- Navbar -->
@@ -111,58 +136,7 @@
       <h2 class="fw-bold h2 p-2 text-center " id="productos">PAPELERIA</h2>
     </div>
     <br>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const products = [
-          { title: "Borradores", price: "$400", imgSrc: "Img/Papeleria/borrador.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-          { title: "Cuaderno", price: "$4.200", imgSrc: "Img/Papeleria/cuaderno.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-          { title: "Marcadores", price: "$2.500", imgSrc: "Img/Papeleria/marcadores.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-          { title: "Fomi 1/8 paquete diversos colores", price: "$600", imgSrc: "Img/Papeleria/fomi.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-          { title: "Lapiceros en azul negro y rojo", price: "$1.200", imgSrc: "Img/Papeleria/lapicero-de-punta-fina-0ffi-Esco-vertical.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-          { title: "Ega en barra", price: "$2.400", imgSrc: "Img/Papeleria/ega en barra.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" }
-        ];
 
-        const container = document.getElementById("product-container");
-
-        products.forEach(product => {
-          const colDiv = document.createElement("div");
-          colDiv.className = "col-md-4 mb-5";
-
-          const cardDiv = document.createElement("div");
-          cardDiv.className = "card tarjeta";
-
-          const link = document.createElement("a");
-          link.href = product.link;
-          link.target = "_blank ";
-
-          const img = document.createElement("img");
-          img.className = "card-img-top ";
-          img.src = product.imgSrc;
-          img.alt = product.title;
-
-          const cardBody = document.createElement("div");
-          cardBody.className = "card-body text-center";
-
-
-          const cardTitle = document.createElement("h5");
-          cardTitle.className = "card-title";
-          cardTitle.innerText = product.title;
-
-          const cardText = document.createElement("p");
-          cardText.className = "card-text";
-          cardText.innerText = product.price;
-
-          link.appendChild(img);
-          cardDiv.appendChild(link);
-          cardDiv.appendChild(cardBody);
-          cardBody.appendChild(cardTitle);
-          cardBody.appendChild(cardText);
-          colDiv.appendChild(cardDiv);
-          container.appendChild(colDiv);
-        });
-      });
-
-    </script>
     </head>
 
     <body>
@@ -339,6 +313,7 @@
   </header>
 
   <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
@@ -348,7 +323,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
+  <script src="script.js"></script>
   <script>
     AOS.init();
     document.addEventListener("DOMContentLoaded", function () {
