@@ -317,9 +317,8 @@ box-shadow:  -10px -10px 11px #8f8f8f,
 
 @media (max-width: 580px) {
   .fixed-icon {
-    
       display: none;
-      /* Ajusta la posición horizontal del ícono para pantallas muy pequeñas */
+      
   }
 }
 
@@ -370,4 +369,31 @@ box-shadow:  -10px -10px 11px #8f8f8f,
 
 .justi {
   text-align: justify;
+}
+
+.butond{
+  background-color: #5aff8c;
+  color: #000000;
+  border: #000000 solid 1px;
+}
+.butonc{
+  background-color: #fcfcfc;
+  color: black;
+}
+
+.butond:hover{
+  background-color: #fd68a1;
+  border: #ff004c solid 1px;
+}
+.butonc:hover{
+  background-color: #f82c2c;
+  color: rgb(255, 255, 255);
+}
+
+.text{
+  text-transform: initial;
+}
+
+.tamano{
+  height: 126px;
 }
