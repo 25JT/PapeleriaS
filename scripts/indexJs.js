@@ -64,3 +64,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
     
   }
+
+       // Muestra una alerta cuando la página haya cargado
+       window.onload = function() {
+        Swal.fire({
+          title: "Gracias por participar en nuestra prueba",
+          text: "Recuerde realizar la encuesta 😉",
+          icon: "success"
+        });
+    };
