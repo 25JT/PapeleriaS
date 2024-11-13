@@ -302,6 +302,11 @@ box-shadow:  -10px -10px 11px #8f8f8f,
       
   }
 
+  .benefits-row {
+
+    flex-direction: column;
+  }
+
 
 }
 
@@ -311,6 +316,7 @@ box-shadow:  -10px -10px 11px #8f8f8f,
       left: 83%;
       
   }
+  
 
 
 }
@@ -318,8 +324,9 @@ box-shadow:  -10px -10px 11px #8f8f8f,
 @media (max-width: 580px) {
   .fixed-icon {
       display: none;
-      
+     
   }
+
 }
 
 .justi {
