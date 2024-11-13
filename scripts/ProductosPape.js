@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
         { title: "Escarchas en tubos", price: "$800", imgSrc: "Img/Papeleria/tubosdeescarcha.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
         { title: "Huellero", price: "$3.000", imgSrc: "Img/Papeleria/huellero.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
         { title: "Sacapunta doble", price: "$1.000", imgSrc: "Img/Papeleria/sacaputa doble.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Cinta de enmascarar", price: "$2.600", imgSrc: "Img/Papeleria/citnaMas.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
         { title: "Cinta de en mascarar", price: "$2.600", imgSrc: "Img/Papeleria/citnaMas.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
     ];
 
