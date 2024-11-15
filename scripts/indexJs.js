@@ -51,3 +51,12 @@
       container.appendChild(colDiv);
     });
   });
+  AOS.init();
+  document.addEventListener("DOMContentLoaded", function () {
+    var typed = new Typed('#PAPEL', {
+      strings: ['BIENVENIDOS', 'A', 'PAPELERIA S'],
+      typeSpeed: 150,
+      backSpeed: 30,
+      loop: true
+    });
+  });
