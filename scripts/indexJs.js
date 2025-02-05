@@ -8,7 +8,7 @@
       { title: "Marcadores", price: "$2.500", imgSrc: "Img/Papeleria/marcadores.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
       { title: "Fomi 1/8 paquete diversos colores", price: "$600", imgSrc: "Img/Papeleria/fomi.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
       { title: "Lapiceros en azul negro y rojo", price: "$1.200", imgSrc: "Img/Papeleria/lapicero-de-punta-fina-0ffi-Esco-vertical.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-      { title: "Ega en barra", price: "$2.400", imgSrc: "Img/Papeleria/ega en barra.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" }
+      { title: "Silicona liquida", price: "$1.700", imgSrc: "Img/Papeleria/siliconaliquida.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
     ];
   
     const container = document.getElementById("product-container");

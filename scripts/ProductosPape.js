@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { title: "Resaltadores", price: "$2.500", imgSrc: "Img/Papeleria/resaltadores.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
         { title: "Silicona delgada", price: "$600", imgSrc: "Img/Papeleria/silicona delgada.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
         { title: "Silicona gruesa", price: "$800", imgSrc: "Img/Papeleria/silicona gruesa.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Silicona liquida", price: "$3.200", imgSrc: "Img/Papeleria/siliconaliquida.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
+        { title: "Silicona liquida", price: "$1.700", imgSrc: "Img/Papeleria/siliconaliquida.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
         { title: "Sobre de regalo", price: "$200", imgSrc: "Img/Papeleria/sobre de regalo.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
         { title: "Sobre de regalo con diseño", price: "$1.200", imgSrc: "Img/Papeleria/sobreDise.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
         { title: "Tabla de plastilina", price: "$5.000", imgSrc: "Img/Papeleria/tabla-plastilina.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
