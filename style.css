@@ -151,18 +151,93 @@ box-shadow:  -10px -10px 11px #8f8f8f,
   }
 }
 
+.card{
+  border: black solid 2px;
 
+}
 .card:hover {
   transform: scale(1.05);
-  transition: transform 0.3s;
+  transition: transform 0.4s;
 }
 
 .card img {
   object-fit: contain;
   height: 250px;
+  box-shadow: #0f0f0f 3px 0px 5px;
+  
   width: 100%;
-  /* Ajusta el tamaño de la imagen al contenedor */
+/*   Ajusta el tamaño de la imagen al contenedor */
 }
+
+.card-body{
+  border-top: #000000 solid 0.1px;
+  box-shadow: #000000 3px 2px 5px;
+
+  background-color: #f1f1f1;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+/*Botono tarjetas*/
+/* From Uiverse.io by alshahwan */ 
+.btn_wpp{
+  background-color: #ffffff;
+  border: 1px solid #25d365;
+  padding: 5px;
+  position: relative;
+  width: 15em;
+  height: 2em;
+  transition: 0.5s;
+  font-size: 17px;
+  align-items: center;
+  border-radius: 0.4em;
+}
+
+.btn_wpp p{
+  position: absolute;
+  top: 0.4em;
+  left: 1.15em;
+  margin: 0;
+   
+  padding: 0;
+  transition: .5s;
+  color: #25d365b9;
+}
+
+.btn_wpp svg{
+  position: absolute;
+  top: 0.6em;
+  right: 0.5em;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s;
+  height: 1em;
+  fill: #fff
+}
+
+.btn_wpp:hover p{
+  left: 0.5em;
+  color: #fff
+}
+
+.btn_wpp:hover svg{
+  opacity: 1;
+}
+
+.btn_wpp:hover{
+  background-color: #25D366;
+  border: 1px solid #000000;
+}
+/**/
+
+
+
 
 .footer-custom {
   background-color: #000000;

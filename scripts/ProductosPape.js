@@ -1,116 +1,161 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const products = [
-        { title: "Borradores", price: "$400", imgSrc: "Img/Papeleria/borrador.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Cuaderno", price: "$4.200", imgSrc: "Img/Papeleria/cuaderno.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Marcadores", price: "$3.200", imgSrc: "Img/Papeleria/marcadores.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Fomi 1/8 paquete diversos colores", price: "$600", imgSrc: "Img/Papeleria/fomi.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Lapiceros en azul negro y rojo", price: "$1.200", imgSrc: "Img/Papeleria/lapicero-de-punta-fina-0ffi-Esco-vertical.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Ega en barra", price: "$2.400", imgSrc: "Img/Papeleria/ega en barra.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Carton Paja", price: "$500", imgSrc: "Img/Papeleria/cartonpaja.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Plastilina por Unidad", price: "$800", imgSrc: "Img/Papeleria/plasuni.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Carpeta Blanca", price: "$500", imgSrc: "Img/Papeleria/carpeta.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Carpeta", price: "$5.000", imgSrc: "Img/Papeleria/carpetas.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Cartuchera", price: "$2.500", imgSrc: "Img/Papeleria/cartuchera.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Cartulina", price: "$200", imgSrc: "Img/Papeleria/cartulina.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Cartulina plana", price: "$500", imgSrc: "Img/Papeleria/cartulina-fuertes.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Cintas", price: "$2.500", imgSrc: "Img/Papeleria/cinta.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Colores", price: "$8.500", imgSrc: "Img/Papeleria/colores.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Corrector", price: "$1.600", imgSrc: "Img/Papeleria/corrector.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Hoja de vida", price: "$800", imgSrc: "Img/Papeleria/Hoja de vida.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Lapiz", price: "$1.200", imgSrc: "Img/Papeleria/lapiz.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },        
-        { title: "Papelillo", price: "$200", imgSrc: "Img/Papeleria/papelillo.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Papel Regalo", price: "$800", imgSrc: "Img/Papeleria/papelR.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Plumones", price: "$3.000", imgSrc: "Img/Papeleria/plumones.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Talonario de rifa", price: "$1.000", imgSrc: "Img/Papeleria/rifa.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Sacapuntas", price: "$300", imgSrc: "Img/Papeleria/sacapunta.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Sobre de manila carta", price: "$400", imgSrc: "Img/Papeleria/sobreM.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Sobre de manila oficio", price: "$500", imgSrc: "Img/Papeleria/oficio.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Temperas por unidad", price: "$1.100", imgSrc: "Img/Papeleria/temperas.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Temperas en caja", price: "$3.000", imgSrc: "Img/Papeleria/cajatemp.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Alcancias", price: "$1.000", imgSrc: "Img/Papeleria/alcancia.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Block carta", price: "$3.500", imgSrc: "Img/Papeleria/blockCarta.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Block oficio", price: "$4.700", imgSrc: "Img/Papeleria/blockOficio.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Recibo de caja menor", price: "$1.000", imgSrc: "Img/Papeleria/cajamenor.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Carpeta Cafe", price: "$500", imgSrc: "Img/Papeleria/carpetacafe.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Escuadras", price: "$2.500", imgSrc: "Img/Papeleria/escuadras.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Formato comercial", price: "$2.500", imgSrc: "Img/Papeleria/formato comercial.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Tablas periodicas", price: "$2.000", imgSrc: "Img/Papeleria/image.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Lapiz rojo", price: "$1.600", imgSrc: "Img/Papeleria/lapizrojo.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Marcadores borrables", price: "$2.500", imgSrc: "Img/Papeleria/mbpelikan.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Grapadora pequeña", price: "$2.600", imgSrc: "Img/Papeleria/mini-grap.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Papel bond", price: "$2.500", imgSrc: "Img/Papeleria/papel bond.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Papel carbon", price: "$800", imgSrc: "Img/Papeleria/papel carbon.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Papel Crepe", price: "$1.000", imgSrc: "Img/Papeleria/papelcrepe.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Papel Fotografico", price: "$2.000", imgSrc: "Img/Papeleria/papelfoto.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Papel Kraft", price: "$1.200", imgSrc: "Img/Papeleria/papelkraft.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },          
-        { title: "Block milimetrado", price: "$14.000", imgSrc: "Img/Papeleria/papelmilimetrado.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Resaltadores", price: "$2.500", imgSrc: "Img/Papeleria/resaltadores.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Silicona delgada", price: "$600", imgSrc: "Img/Papeleria/silicona delgada.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Silicona gruesa", price: "$800", imgSrc: "Img/Papeleria/silicona gruesa.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Silicona liquida", price: "$1.700", imgSrc: "Img/Papeleria/siliconaliquida.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Sobre de regalo", price: "$200", imgSrc: "Img/Papeleria/sobre de regalo.png", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Sobre de regalo con diseño", price: "$1.200", imgSrc: "Img/Papeleria/sobreDise.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Tabla de plastilina", price: "$5.000", imgSrc: "Img/Papeleria/tabla-plastilina.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Talonario de recibo", price: "$1.000", imgSrc: "Img/Papeleria/talon.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Caja de tapa bocas", price: "$10.000", imgSrc: "Img/Papeleria/tapabocas.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Tijeras", price: "$1.000", imgSrc: "Img/Papeleria/tijeras.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Escarchas en tubos", price: "$800", imgSrc: "Img/Papeleria/tubosdeescarcha.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Huellero", price: "$3.000", imgSrc: "Img/Papeleria/huellero.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Sacapunta doble", price: "$1.000", imgSrc: "Img/Papeleria/sacaputa doble.webp", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-        { title: "Cinta de en mascarar", price: "$2.600", imgSrc: "Img/Papeleria/citnaMas.jpg", link: "https://wa.me/message/Q4IDJZDEGDYYO1" },
-    ];
+const container = document.getElementById("product-container");
+const searchInput = document.getElementById("search-input");
 
-    products.sort((a, b) => a.title.localeCompare(b.title));
+function displayProducts(filteredProducts) {
+    container.innerHTML = "";
 
-    const container = document.getElementById("product-container");
-    const searchInput = document.getElementById("search-input");
-
-    function displayProducts(filteredProducts) {
-        container.innerHTML = "";
-        filteredProducts.forEach(product => {
-            const colDiv = document.createElement("div");
-            colDiv.className = "col-md-4 mb-4";
-
-            const cardDiv = document.createElement("div");
-            cardDiv.className = "card";
-
-            const link = document.createElement("a");
-            link.href = product.link;
-            link.target = "_blank";
-
-            const img = document.createElement("img");
-            img.className = "card-img-top";
-            img.src = product.imgSrc;
-            img.alt = product.title;
-
-            const cardBody = document.createElement("div");
-            cardBody.className = "card-body text-center";
-
-            const cardTitle = document.createElement("h5");
-            cardTitle.className = "card-title";
-            cardTitle.innerText = product.title;
-
-            const cardText = document.createElement("p");
-            cardText.className = "card-text";
-            cardText.innerText = product.price;
-
-            link.appendChild(img);
-            cardDiv.appendChild(link);
-            cardDiv.appendChild(cardBody);
-            cardBody.appendChild(cardTitle);
-            cardBody.appendChild(cardText);
-            colDiv.appendChild(cardDiv);
-            container.appendChild(colDiv);
-        });
+    if (filteredProducts.length === 0) {
+        const noResultDiv = document.createElement("div");
+        noResultDiv.className = "col-12 text-center mt-4";
+        noResultDiv.innerHTML = `<h5 class="text-danger">❌ No se encontraron productos con ese nombre.</h5>`;
+        container.appendChild(noResultDiv);
+        return;
     }
 
-    searchInput.addEventListener("input", function() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const filteredProducts = products.filter(product => 
-            product.title.toLowerCase().includes(searchTerm)
-        );
-        displayProducts(filteredProducts);
-    });
+    filteredProducts.forEach(product => {
+        const colDiv = document.createElement("div");
+        colDiv.className = "col-md-4 mb-4 container-card";  
 
-    displayProducts(products);
+
+        const cardDiv = document.createElement("div");
+        cardDiv.className = "card h-100 shadow-sm";
+      
+        
+    
+        const img = document.createElement("img");
+        img.className = "card-img-top";
+        img.src = product.imgSrc;
+        img.alt = product.title;
+        img.style.height = "300px";
+        
+        img.style.width = "100%";
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body text-center";
+        
+
+
+        const cardTitle = document.createElement("h5");
+        cardTitle.className = "card-title";
+        cardTitle.style.textTransform = "uppercase";
+        cardTitle.innerText = product.title;
+        
+        
+        const cardText = document.createElement("p");
+        cardText.className = "card-text fw-italic";
+        cardText.style.textTransform = "uppercase";
+        cardText.style.fontStyle = "italic";
+        cardText.innerText = product.price;
+        
+        // Botón de WhatsApp
+        const whatsappButton = document.createElement("button");
+        whatsappButton.className = "btn_wpp"; // Clase personalizada
+        whatsappButton.onclick = () => sendWhatsAppMessage(product.title);
+        
+        // Crear el párrafo con el texto dentro del botón
+        const buttonText = document.createElement("p");
+        buttonText.innerText = "COMPRA POR WHATSAPP";
+        buttonText.style.fontStyle = "italic";
+        buttonText.style.fontWeight = "bold";
+        // Crear el icono de WhatsApp en SVG
+        const whatsappIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        whatsappIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+        whatsappIcon.setAttribute("width", "16");
+        whatsappIcon.setAttribute("height", "16");
+        whatsappIcon.setAttribute("fill", "currentColor");
+        whatsappIcon.setAttribute("class", "bi bi-whatsapp");
+        whatsappIcon.setAttribute("viewBox", "0 0 16 16");
+
+        // Agregar el `path` dentro del SVG
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", "M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z");
+        whatsappIcon.appendChild(path);
+        // Agregar los elementos dentro del botón
+        whatsappButton.appendChild(buttonText);
+        whatsappButton.appendChild(whatsappIcon);
+        
+        // Agregar el botón al documento (ajusta esto según donde quieras mostrarlo)
+        document.body.appendChild(whatsappButton);
+        
+
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        cardBody.appendChild(whatsappButton); // Agregar botón a la tarjeta
+        cardDiv.appendChild(img);
+        cardDiv.appendChild(cardBody);
+        colDiv.appendChild(cardDiv);
+        container.appendChild(colDiv);
+    });
+}
+
+// Función para abrir WhatsApp con el mensaje prellenado
+function sendWhatsAppMessage(productName) {
+    const phoneNumber = "xxxxxxxx"; // Reemplaza con el número de WhatsApp del negocio
+    const message = encodeURIComponent(`Hola, estoy interesado en comprar: ${productName}. ¿Está disponible?`);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappURL, "_blank");
+}
+
+let products = [];
+
+fetch("http://localhost:3000/inventario")//node index.js 
+
+    .then(response => response.json())
+    .then(data => {
+        //  console.log("🔍 Respuesta de la API:", data);
+
+        if (!data || typeof data !== "object") {
+            console.error("❌ No se encontraron datos válidos en la API.");
+            return;
+        }
+
+        const values = Array.isArray(data.values) ? data.values : Object.values(data);
+        //  console.log("✅ Datos organizados en filas:", values);
+
+        if (!Array.isArray(values) || values.length === 0) {
+            console.error("❌ No hay datos válidos en la respuesta.");
+            return;
+        }
+
+        const headers = values[0] && typeof values[0] === "object" ? Object.keys(values[0]) : [];
+        //   console.log("📝 Encabezados detectados:", headers);
+
+        const productoIndex = headers.indexOf("title");
+        const coloresIndex = headers.indexOf("colores");
+        const paquetesIndex = headers.indexOf("paquetes");
+        const precioIndex = headers.indexOf("price");
+        const urlIndex = headers.indexOf("imgSrc");
+
+        if ([productoIndex, coloresIndex, paquetesIndex, precioIndex, urlIndex].includes(-1)) {
+            console.error("❌ Error: Algunos nombres de columnas no coinciden.");
+            return;
+        }
+
+        function fixDriveUrl(driveUrl) {
+            if (!driveUrl) return "";
+            let match = driveUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9_-]+)(?:\/view|\?|$)/);
+            return match && match[1] ? `https://drive.google.com/thumbnail?export=view&id=${match[1]}` : driveUrl;
+        }
+
+        products = values.slice(1).map(row => ({
+            title: row['title']?.trim() || "Sin nombre",
+            colores: row['colores']?.trim() || "N/A",
+            paquetes: row['paquetes']?.trim() || "N/A",
+            price: `${row['price']?.trim() || "N/A"}`,
+            imgSrc: fixDriveUrl(row['imgSrc']?.trim() || ""),
+        }));
+
+        //  console.log("📦 Productos procesados:", products);
+        products.sort((a, b) => a.title.localeCompare(b.title));
+        displayProducts(products);
+    })
+    .catch(error => console.error("🚨 Error con la API:", error));
+
+searchInput.addEventListener("input", function () {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredProducts = products.filter(product =>
+        product.title.toLowerCase().includes(searchTerm)
+    );
+    displayProducts(filteredProducts);
 });
+
