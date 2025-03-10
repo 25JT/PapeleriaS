@@ -20,8 +20,6 @@ function displayProducts(filteredProducts) {
         const cardDiv = document.createElement("div");
         cardDiv.className = "card h-100 shadow-sm";
       
-        
-    
         const img = document.createElement("img");
         img.className = "card-img-top";
         img.src = product.imgSrc;
@@ -98,7 +96,7 @@ function sendWhatsAppMessage(productName) {
 
 let products = [];
 
-fetch("http://localhost:3000/inventario")//node index.js 
+fetch("http://localhost:3000/inventario/papeleria")//node index.js 
 
     .then(response => response.json())
     .then(data => {
