@@ -99,7 +99,7 @@ function fixDriveUrl(driveUrl) {
 }
 
 let products = [];
-fetch("http://localhost:3000/inventario/productos")
+fetch("https://apiprotection-production.up.railway.app/inventario/productos")
     .then(response => response.json())
     .then(data => {
         if (!Array.isArray(data)) {

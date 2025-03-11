@@ -96,7 +96,7 @@ function sendWhatsAppMessage(productName) {
 
 let products = [];
 
-fetch("http://localhost:3000/inventario/papeleria")//node index.js 
+fetch("https://apiprotection-production.up.railway.app/inventario/papeleria")//node index.js 
 
     .then(response => response.json())
     .then(data => {
