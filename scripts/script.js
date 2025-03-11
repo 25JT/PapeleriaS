@@ -23,5 +23,21 @@ function mesj() {
   }
 }
 
+function BienvenidaAlerta(params) {
+    
+    Swal.fire({
+        title: "GRACIAS POR VISITARNOS",
+        text: "Esta pagina se encuntra en formato pre-lanzamiento por lo que algunos servicios pueden no estar disponibles. porfavor informanos de cualquier error.😊",
+        icon: "info",
+        width: 600,
+        padding: "3em",
+        color: "#000000",
+        backdrop: `
+          rgb(0, 0, 0, 0.900)
+        `,
+        confirmButtonColor: "#e03166",
+      });
+}
+
 
 
