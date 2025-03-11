@@ -182,7 +182,13 @@ box-shadow:  -10px -10px 11px #8f8f8f,
   text-decoration: underline;
   font-style: italic;
 }
-
+.category-title{
+  border: #000000 solid 1px;
+  display: flex;
+  box-shadow: #000000 3px 2px 5px;
+  color: red;
+  justify-content: center;
+}
 /*Botono tarjetas*/
 /* From Uiverse.io by alshahwan */ 
 .btn_wpp{
