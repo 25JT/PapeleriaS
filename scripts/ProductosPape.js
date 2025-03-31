@@ -88,7 +88,7 @@ function displayProducts(filteredProducts) {
 
 // Función para abrir WhatsApp con el mensaje prellenado
 function sendWhatsAppMessage(productName) {
-    const phoneNumber = "xxxxxxxx"; // Reemplaza con el número de WhatsApp del negocio
+    const phoneNumber = "3014414701"; // Reemplaza con el número de WhatsApp del negocio
     const message = encodeURIComponent(`Hola, estoy interesado en comprar: ${productName}. ¿Está disponible?`);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappURL, "_blank");
