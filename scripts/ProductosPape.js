@@ -1,3 +1,4 @@
+import { rutaServidor } from "./rutaServidor.js";
 const container = document.getElementById("product-container");
 const searchInput = document.getElementById("search-input");
 
@@ -14,42 +15,42 @@ function displayProducts(filteredProducts) {
 
     filteredProducts.forEach(product => {
         const colDiv = document.createElement("div");
-        colDiv.className = "col-md-4 mb-4 container-card";  
+        colDiv.className = "col-md-4 mb-4 container-card";
 
 
         const cardDiv = document.createElement("div");
         cardDiv.className = "card h-100 shadow-sm";
-      
+
         const img = document.createElement("img");
         img.className = "card-img-top";
         img.src = product.imgSrc;
         img.alt = product.title;
         img.style.height = "300px";
-        
+
         img.style.width = "100%";
 
         const cardBody = document.createElement("div");
         cardBody.className = "card-body text-center";
-        
+
 
 
         const cardTitle = document.createElement("h5");
         cardTitle.className = "card-title";
         cardTitle.style.textTransform = "uppercase";
         cardTitle.innerText = product.title;
-        
-        
+
+
         const cardText = document.createElement("p");
         cardText.className = "card-text fw-italic";
         cardText.style.textTransform = "uppercase";
         cardText.style.fontStyle = "italic";
         cardText.innerText = product.price;
-        
+
         // Botón de WhatsApp
         const whatsappButton = document.createElement("button");
         whatsappButton.className = "btn_wpp"; // Clase personalizada
         whatsappButton.onclick = () => sendWhatsAppMessage(product.title);
-        
+
         // Crear el párrafo con el texto dentro del botón
         const buttonText = document.createElement("p");
         buttonText.innerText = "COMPRA POR WHATSAPP";
@@ -71,10 +72,10 @@ function displayProducts(filteredProducts) {
         // Agregar los elementos dentro del botón
         whatsappButton.appendChild(buttonText);
         whatsappButton.appendChild(whatsappIcon);
-        
+
         // Agregar el botón al documento (ajusta esto según donde quieras mostrarlo)
         document.body.appendChild(whatsappButton);
-        
+
 
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);
@@ -96,7 +97,7 @@ function sendWhatsAppMessage(productName) {
 
 let products = [];
 
-fetch("https://apiprotection-production.up.railway.app/inventario/papeleria")//node index.js 
+fetch(rutaServidor + "inventario/papeleria")//node index.js 
 
     .then(response => response.json())
     .then(data => {
