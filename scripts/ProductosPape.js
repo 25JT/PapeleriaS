@@ -1,4 +1,4 @@
-import { rutaServidor } from "./rutaServidor.js";
+
 const container = document.getElementById("product-container");
 const searchInput = document.getElementById("search-input");
 
@@ -97,7 +97,7 @@ function sendWhatsAppMessage(productName) {
 
 let products = [];
 
-fetch(rutaServidor + "inventario/papeleria")//node index.js 
+fetch("https://api-protection.vercel.app/inventario/papeleria")//node index.js 
 
     .then(response => response.json())
     .then(data => {

@@ -1,4 +1,4 @@
-import { rutaServidor } from "./config.js";
+
 const container = document.getElementById("product-container");
 
 const categories = ["Lociones", "Desodorantes", "Cremas", "Talco", "Shampoo", "Productos"];
