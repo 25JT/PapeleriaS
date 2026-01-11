@@ -100,7 +100,7 @@ function fixDriveUrl(driveUrl) {
 }
 
 let products = [];
-fetch(rutaServidor + "inventario/productos")
+fetch("https://api-protection.vercel.app/inventario/productos")
     .then(response => response.json())
     .then(data => {
         if (!Array.isArray(data)) {
