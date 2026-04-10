@@ -1,4 +1,4 @@
-import { ruta } from "../ruta.js";
+
 const container = document.getElementById("product-container");
 
 const categories = ["Lociones", "Desodorantes", "Cremas", "Talco", "Shampoo", "Productos"];
@@ -100,7 +100,7 @@ function fixDriveUrl(driveUrl) {
 }
 
 let products = [];
-fetch(`${ruta}/inventario/productos`)
+fetch(`https://api-protection-cnkp.vercel.app/inventario/productos`)
     .then(response => response.json())
     .then(data => {
         if (!Array.isArray(data)) {

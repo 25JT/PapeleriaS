@@ -1,2 +1,2 @@
 
-export const ruta = "https://api-protection-cnkp.vercel.app";
+export const ruta = "";
