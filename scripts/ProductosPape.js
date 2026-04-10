@@ -1,4 +1,4 @@
-import { ruta } from "../ruta.js";
+
 const container = document.getElementById("product-container");
 const searchInput = document.getElementById("search-input");
 
