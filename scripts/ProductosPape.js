@@ -97,7 +97,7 @@ function sendWhatsAppMessage(productName) {
 
 let products = [];
 
-fetch(`${ruta}/inventario/papeleria`)//node index.js 
+fetch(`https://api-protection-cnkp.vercel.app/inventario/papeleria`)//node index.js 
 
     .then(response => response.json())
     .then(data => {
