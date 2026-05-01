@@ -1,125 +1,224 @@
 
 const container = document.getElementById("product-container");
-
+const searchInput = document.getElementById("search-input");
+const loadMoreButton = document.getElementById("load-more-button");
+const PRODUCTS_PER_PAGE = 6;
 const categories = ["Lociones", "Desodorantes", "Cremas", "Talco", "Shampoo", "Productos"];
 
-function displayProductsByCategory(products) {
-    container.innerHTML = "";
+let products = [];
+let filteredProducts = [];
+let visibleCount = PRODUCTS_PER_PAGE;
+let currentCategory = 'todos';
 
-    categories.forEach(category => {
-        const categoryProducts = products.filter(product => product.tipo === category);
-        if (categoryProducts.length === 0) return;
+function renderCategoryFilters() {
+  const filterContainer = document.getElementById("category-filters");
+  if (!filterContainer) return;
 
-        const categoryDiv = document.createElement("div");
-        categoryDiv.className = "category-section";
-        categoryDiv.innerHTML = `<h2 class="category-title" style="text-transform: uppercase;" id = "${category}">${category}</h2> <br>`;
-        const rowDiv = document.createElement("div");
-        rowDiv.className = "row";
+  filterContainer.innerHTML = "";
 
-        categoryProducts.forEach(product => {
-            const colDiv = document.createElement("div");
-            colDiv.className = "col-md-4 mb-4 container-card";
+  // Opción "Todos"
+  const allBtn = createFilterButton("Todos", "todos");
+  filterContainer.appendChild(allBtn);
 
-            const cardDiv = document.createElement("div");
-            cardDiv.className = "card h-100 shadow-sm";
+  // Generar botones para las categorías definidas
+  categories.sort().forEach(cat => {
+    const label = cat.charAt(0).toUpperCase() + cat.slice(1);
+    const btn = createFilterButton(label, cat.toLowerCase());
+    filterContainer.appendChild(btn);
+  });
+}
 
-            const img = document.createElement("img");
-            img.className = "card-img-top";
-            img.src = fixDriveUrl(product.imgSrc);
-            img.alt = product.title;
-            img.style.height = "300px";
-            img.style.width = "100%";
+function createFilterButton(label, value) {
+  const btn = document.createElement("button");
+  const isActive = currentCategory === value;
+  btn.className = `px-6 py-2 rounded-full text-sm font-semibold transition-all border-2 whitespace-nowrap ${isActive
+    ? "bg-rose-500 text-white border-rose-500 shadow-md"
+    : "bg-white text-slate-600 border-slate-200 hover:border-rose-200 hover:bg-rose-50"
+    }`;
+  btn.textContent = label;
+  btn.onclick = () => {
+    currentCategory = value;
+    renderCategoryFilters();
+    applySearch();
+  };
+  return btn;
+}
 
-            const cardBody = document.createElement("div");
-            cardBody.className = "card-body text-center";
+function createWhatsAppButton(productTitle) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-rose-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-rose-600";
+  button.textContent = "Compra por WhatsApp";
+  button.onclick = () => sendWhatsAppMessage(productTitle);
+  return button;
+}
 
-            const cardTitle = document.createElement("h5");
-            cardTitle.className = "card-title";
-            cardTitle.style.textTransform = "uppercase";
-            cardTitle.style.fontSize = "1.2rem";
-            cardTitle.innerText = product.title;
+function createProductCard(product) {
+  const card = document.createElement("article");
+  card.className = "rounded-[2rem] border border-slate-200 bg-white shadow-[0_25px_60px_-30px_rgba(15,23,42,0.35)] overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-20px_rgba(15,23,42,0.25)]";
 
-            const cardText = document.createElement("p");
-            cardText.className = "card-text fw-italic";
-            cardText.innerText = product.price;
-            // Botón de WhatsApp
-            const whatsappButton = document.createElement("button");
-            whatsappButton.className = "btn_wpp"; // Clase personalizada
-            whatsappButton.onclick = () => sendWhatsAppMessage(product.title);
+  const imageWrapper = document.createElement("div");
+  imageWrapper.className = "relative aspect-[4/3] overflow-hidden bg-slate-100";
 
-            // Crear el párrafo con el texto dentro del botón
-            const buttonText = document.createElement("p");
-            buttonText.innerText = "COMPRA POR WHATSAPP";
-            buttonText.style.fontStyle = "italic";
-            buttonText.style.fontWeight = "bold";
-            // Crear el icono de WhatsApp en SVG
-            const whatsappIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            whatsappIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-            whatsappIcon.setAttribute("width", "16");
-            whatsappIcon.setAttribute("height", "16");
-            whatsappIcon.setAttribute("fill", "currentColor");
-            whatsappIcon.setAttribute("class", "bi bi-whatsapp");
-            whatsappIcon.setAttribute("viewBox", "0 0 16 16");
+  const img = document.createElement("img");
+  img.className = "h-full w-full object-cover";
+  img.src = product.imgSrc || "Img/fondos/cosmeticos.webp";
+  img.alt = product.title;
+  imageWrapper.appendChild(img);
 
-            // Agregar el `path` dentro del SVG
-            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            path.setAttribute("d", "M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z");
-            whatsappIcon.appendChild(path);
-            // Agregar los elementos dentro del botón
-            whatsappButton.appendChild(buttonText);
-            whatsappButton.appendChild(whatsappIcon);
+  const cardBody = document.createElement("div");
+  cardBody.className = "p-6";
 
-            // Agregar el botón al documento (ajusta esto según donde quieras mostrarlo)
-            document.body.appendChild(whatsappButton);
+  const badge = document.createElement("span");
+  badge.className = "inline-flex rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700";
+  badge.textContent = product.tipo.charAt(0).toUpperCase() + product.tipo.slice(1);
 
+  const title = document.createElement("h3");
+  title.className = "mt-4 text-lg font-semibold text-slate-900";
+  title.textContent = product.title;
 
-            cardBody.appendChild(cardTitle);
-            cardBody.appendChild(cardText);
-            cardBody.appendChild(whatsappButton);
-            cardDiv.appendChild(img);
-            cardDiv.appendChild(cardBody);
-            colDiv.appendChild(cardDiv);
-            rowDiv.appendChild(colDiv);
-        });
+  const description = document.createElement("p");
+  description.className = "mt-3 text-sm leading-6 text-slate-600";
+  description.textContent = product.description || "Descripción no disponible.";
 
-        categoryDiv.appendChild(rowDiv);
-        container.appendChild(categoryDiv);
-    });
+  const price = document.createElement("p");
+  price.className = "mt-4 text-lg font-bold text-slate-900";
+  price.textContent = product.price;
+
+  const button = createWhatsAppButton(product.title);
+
+  cardBody.appendChild(badge);
+  cardBody.appendChild(title);
+  cardBody.appendChild(description);
+  cardBody.appendChild(price);
+  cardBody.appendChild(button);
+
+  card.appendChild(imageWrapper);
+  card.appendChild(cardBody);
+  return card;
+}
+
+function updateLoadMoreButton(totalItems) {
+  if (!loadMoreButton) return;
+  loadMoreButton.style.display = totalItems > visibleCount ? "inline-flex" : "none";
+}
+
+function displayProducts(items) {
+  if (!container) return;
+  container.innerHTML = "";
+
+  if (!items.length) {
+    const emptyState = document.createElement("div");
+    emptyState.className = "col-span-3 text-center py-16";
+    emptyState.innerHTML = `<p class="text-base font-semibold text-slate-500">No se encontraron productos con ese nombre.</p>`;
+    container.appendChild(emptyState);
+    updateLoadMoreButton(0);
+    return;
+  }
+
+  const visibleItems = items.slice(0, visibleCount);
+  visibleItems.forEach(product => container.appendChild(createProductCard(product)));
+  updateLoadMoreButton(items.length);
 }
 
 function sendWhatsAppMessage(productName) {
-    const phoneNumber = "3014414701";
-    const message = encodeURIComponent(`Hola, estoy interesado en comprar: ${productName}. ¿Está disponible?`);
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+  const phoneNumber = "3014414701";
+  const message = encodeURIComponent(`Hola, estoy interesado en comprar: ${productName}. ¿Está disponible?`);
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
 }
 
 function fixDriveUrl(driveUrl) {
-    if (!driveUrl) return "";
-    let match = driveUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9_-]+)(?:\/view|\?|$)/);
-    return match && match[1] ? `https://drive.google.com/thumbnail?export=view&id=${match[1]}` : driveUrl;
+  if (!driveUrl) return "";
+  const match = driveUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9_-]+)(?:\/view|\?|$)/);
+  return match && match[1] ? `https://drive.google.com/thumbnail?export=view&id=${match[1]}` : driveUrl;
 }
 
-let products = [];
-fetch(`https://api-protection-cnkp.vercel.app/inventario/productos`)
-    .then(response => response.json())
-    .then(data => {
-        if (!Array.isArray(data)) {
-            console.error("❌ No se encontraron datos válidos en la API.");
-            return;
-        }
+function applySearch() {
+  if (!searchInput) return;
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  visibleCount = PRODUCTS_PER_PAGE;
 
-        products = data.map(item => ({
+  filteredProducts = products.filter(product => {
+    const matchesSearch = product.title.toLowerCase().includes(searchTerm);
+    const matchesCategory = currentCategory === 'todos' || product.tipo.toLowerCase() === currentCategory.toLowerCase();
+    return matchesSearch && matchesCategory;
+  });
+
+  displayProducts(filteredProducts);
+}
+
+function loadMoreProducts() {
+  visibleCount += PRODUCTS_PER_PAGE;
+  displayProducts(filteredProducts.length ? filteredProducts : products);
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", applySearch);
+}
+
+if (loadMoreButton) {
+  loadMoreButton.addEventListener("click", loadMoreProducts);
+
+  // Implementación de Scroll Infinito
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && loadMoreButton.style.display !== "none") {
+        loadMoreProducts();
+      }
+    });
+  }, observerOptions);
+
+  observer.observe(loadMoreButton);
+}
+
+fetch("https://api-protection-cnkp.vercel.app/inventario/productos")
+  .then(response => response.json())
+  .then(data => {
 
 
-            title: item.title?.trim() || "Sin nombre",
-            price: item.price?.trim() || "N/A",
-            tipo: item.tipo?.trim() || "Desconocido",
-            imgSrc: item.imgSrc?.trim() || ""
-        })).filter(p => categories.includes(p.tipo));
+    const items = Array.isArray(data)
 
+      ? data
+      : Array.isArray(data.values)
+        ? data.values.slice(1)
+        : Object.values(data);
+    console.log(items.value);
+    if (!Array.isArray(items) || items.length === 0) {
+      console.error("❌ No se encontraron datos válidos en la API.");
+      if (container) {
+        container.innerHTML = `<div class="col-span-3 text-center py-16"><p class="text-base font-semibold text-slate-500">No hay productos disponibles en este momento.</p></div>`;
+      }
+      return;
+    }
 
-        displayProductsByCategory(products);
-    })
-    .catch(error => console.error("🚨 Error con la API:", error));
+    products = items
+      .map(item => ({
+        title: item.title?.trim() || "Sin nombre",
+        price: item.price?.trim() || "N/A",
+        tipo: item.tipo?.trim() || "Productos",
+        imgSrc: fixDriveUrl(item.imgSrc?.trim() || ""),
+        description: item.paquetes?.trim() || item.colores?.trim() || "Cuida tu piel con la mejor calidad Yanbal.",
+      }))
+      .filter(product => categories.some(cat =>
+        cat.toLowerCase() === product.tipo.toLowerCase() ||
+        product.tipo.toLowerCase().includes(cat.toLowerCase().replace(/s$/, ''))
+      ));
+
+    filteredProducts = products.slice();
+    renderCategoryFilters();
+    displayProducts(products);
+  })
+  .catch(error => {
+    console.error("🚨 Error con la API:", error);
+    if (container) {
+      container.innerHTML = `<div class="col-span-3 text-center py-16"><p class="text-base font-semibold text-slate-500">Error al cargar los productos. Intenta nuevamente más tarde.</p></div>`;
+    }
+  });
 
 

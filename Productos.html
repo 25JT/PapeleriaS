@@ -1,184 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html class="light" lang="es">
 
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Papeleria S</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel="icon" type="image/png" sizes="16x16" href="Img/logos/favicon.png">
-  <!-- CSS ONLY BOOSTRAP -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Catálogo | Papelería S</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="Img/logos/favicon.png" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#fff0f3",
+            "on-primary-fixed-variant": "#8c0056",
+            "surface-tint": "#b70072",
+            "secondary-container": "#fd6fac",
+            "on-surface": "#25181d",
+            "secondary-fixed-dim": "#ffb0cc",
+            "on-secondary-fixed-variant": "#890d50",
+            "primary": "#b70072",
+            "on-primary-fixed": "#3d0023",
+            "primary-fixed": "#ffd9e5",
+            "surface-container": "#ffe8ee",
+            "surface-variant": "#f5dce3",
+            "on-tertiary-fixed": "#1a1c1c",
+            "on-secondary-container": "#700040",
+            "on-background": "#25181d",
+            "tertiary": "#5d5f5f",
+            "surface-dim": "#edd4db",
+            "on-surface-variant": "#584049",
+            "error": "#ba1a1a",
+            "secondary": "#a92c69",
+            "inverse-surface": "#3c2c31",
+            "outline-variant": "#dfbec9",
+            "on-primary-container": "#580034",
+            "surface-container-high": "#fbe2e9",
+            "surface-bright": "#fff8f8",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#454747",
+            "surface-container-highest": "#f5dce3",
+            "inverse-on-surface": "#ffecf0",
+            "on-tertiary-container": "#282a2b",
+            "on-tertiary": "#ffffff",
+            "background": "#fff8f8",
+            "tertiary-fixed-dim": "#c6c6c7",
+            "secondary-fixed": "#ffd9e4",
+            "surface": "#fff8f8",
+            "outline": "#8c6f79",
+            "inverse-primary": "#ffb0cf",
+            "tertiary-fixed": "#e2e2e2",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#909191",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#ffb0cf",
+            "on-secondary-fixed": "#3e0021",
+            "error-container": "#ffdad6",
+            "primary-container": "#ff45a8",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "lg": "24px",
+            "base": "4px",
+            "xl": "48px",
+            "2xl": "80px",
+            "gutter": "24px",
+            "container_max": "1280px",
+            "md": "16px",
+            "xs": "4px",
+            "sm": "8px"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "h2": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "button": ["Inter"],
+            "body-md": ["Inter"],
+            "h3": ["Plus Jakarta Sans"],
+            "h1": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["14px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "button": ["15px", { "lineHeight": "1", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "h1": ["40px", { "lineHeight": "1.2", letterSpacing: "-0.02em", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .product-card:hover .cart-action {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
 </head>
 
-<body>
-
-  <!-- Icono -->
-  <div class="fixed-icon" id="fixed-icon">
-    <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-      <h6 class="text-danger">Contactanos</h6>
-      <img src="Img/logos/LOGO SIN NOMBRE.png" alt="Icono">
-    </a>
-  </div>
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 text" id="exampleModalLabel">Escribenos un mensaje</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="message-text" class="col-form-label">Mensaje:</label>
-              <textarea class="form-control tamano" id="message-text" maxlength="100"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary butonc" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary butond" data-bs-dismiss="modal" onclick="mesj()">Enviar
-            Mensaje</button>
+<body
+  class="bg-surface font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+  <div id="nav-placeholder"></div>
+  <main class="pt-32 pb-2xl">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Header Section -->
+      <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-xl md:items-center">
+        <header class="text-center md:text-left">
+          <h1 class="font-h1 text-h1 text-on-surface mb-md">Catalago Papeleria</h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Descubre una selección curada de papelería premium, accesorios únicos y cosméticos diseñados para inspirar
+            tu creatividad diaria con el mejor estilo.
+          </p>
+        </header>
+        <!-- Image Placeholder Area as requested in Image 11 -->
+        <div
+          class=" w-full md:w-1/2 relative h-[400px] md:h-[500px] rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-500 hover:scale-105">
+          
+          <img alt="" class="w-full h-full object-cover"
+            data-alt="A luxurious lifestyle photography shot of high-end cosmetic products arranged artfully on a marble surface. The lighting is soft and diffused, creating a bright and airy modern aesthetic consistent with light-mode UI design. Soft pink and rose gold accents dominate the color palette, featuring elegant skincare bottles and gold-trimmed brushes. The mood is serene, premium, and sophisticated, reflecting a high-quality stationery and beauty brand."
+            src="Img/fondos/PRODCUTOS 2.webp" />
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" width="10%" height="20%"
-          class="d-inline-block align-text-center">
-        <span class="fw-bold">PAPELERIA</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link letra fw-bold" href="index.html">INICIO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="Cosmeticos.html">COSMETICOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="Servicios.html">SERVICIOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal"
-              data-bs-whatever="@mdo">CONTACTANOS</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <header>
-    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="Img/fondos/PRODCUTOS 2.webp" class="d-block w-100 carousel-img">
+      <!-- Search Bar (Replaced Filters Bar) -->
+      <div class="flex flex-wrap items-center gap-4 mb-xl border-b border-outline-variant pb-md">
+        <div class="relative flex-1 max-w-xl">
+          <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-outline">
+            <span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+          </span>
+          <input id="search-input"
+            class="w-full pl-11 pr-4 py-3 bg-surface-container-high border-none rounded-full text-on-surface focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/60 font-body-md transition-all"
+            placeholder="¿Qué estás buscando hoy?" type="text">
+        </div>
+        <div class="ml-auto hidden md:flex items-center gap-2 text-on-surface-variant">
+          <span class="font-label-sm text-label-sm">Ordenar por:</span>
+          <select class="bg-transparent border-none font-label-sm text-label-sm focus:ring-0 cursor-pointer">
+            <option>Más recientes</option>
+            <option>Precio: Menor a Mayor</option>
+            <option>Precio: Mayor a Menor</option>
+          </select>
         </div>
       </div>
-    </div>
-    <br>
-    <!---carusel final -->
-    <section class="container my-0" data-aos="fade-up">
-      <div class="row">
-        <div class="col-lg-0   justi">
-          <h1 class="center">PAPELERIA</h1>
-          <P class="justi"> Mantén tu espacio de trabajo o estudio bien equipado con nuestra amplia selección de
-            artículos de oficina y escolar. Desde bolígrafos y carpetas hasta calculadoras y agendas, tenemos todo lo
-            que necesitas para mantenerte organizado y eficiente.</P>
-    </section>
-
-    <!---productos -->
-    <div class="container mt-5" data-aos="fade-down">
-      <div class="mb-4">
-        <input type="text" id="search-input" class="form-control" placeholder="Buscar producto...">
+      <!-- Product Grid -->
+      <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl"></div>
+      <!-- Pagination/Load More -->
+      <div class="mt-2xl flex justify-center">
+        <button id="load-more-button"
+          class="bg-surface-container-lowest text-primary border-2 border-primary-container w-14 h-14 rounded-full flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 shadow-sm">
+          <span class="material-symbols-outlined text-3xl">expand_more</span>
+        </button>
       </div>
-
-      <div class="row" id="product-container"></div>
-      <!-- Las tarjetas de productos se generarán aquí -->
     </div>
-    </div>
-
-    <div class="p-2" data-aos="flip-left">
-      <h2 class="fw-bold h2 p-2 text-center" id="productos">Nos puedes encontrar Aqui</h2>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer-custom" data-aos="fade-up">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-sm-6 mb-4">
-            <h5>Contacto</h5>
-            <ul class="list-unstyled">
-              <li>Teléfono: <a href="tel:301-441-4701"></a></li>
-              <a href="https://wa.me/message/Q4IDJZDEGDYYO1" aria-label="Facebook"><i
-                  class="fab fa-facebook">301-441-4701</i></a>
-              <li>Email:</li>
-              <a href="mailto:papeleria.s27@gmail.com" aria-label="Facebook"><i
-                  class="fab fa-facebook">papeleria.s27@gmail.com</i></a>
-            </ul>
-          </div>
-          <div class="col-md-3 col-sm-6 mb-4">
-            <h5>Redes Sociales</h5>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/papeleria.soro" aria-label="Facebook"><i
-                  class="fab fa-facebook">facebook</i></a>
-              <!-- Añadir más iconos de redes sociales -->
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 mb-4">
-            <h5>Dirección</h5>
-            <p>Av4 #2-42 palmaseca</p>
-          </div>
-          <div class="col-md-3 col-sm-6 text-center mb-4">
-            <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" class="footer-logo">
-            <h5><a href="what.html">¿Quienes somos? </a></h5>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127434.5548822756!2d-76.49730571751309!3d3.5109598714967127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a07555a296a91%3A0x4e51e8074e54052d!2sPapeleria%20S!5e0!3m2!1ses!2sco!4v1720125877261!5m2!1ses!2sco"
-              width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-12 text-center">
-            <p>&copy; 2023 Papeleria S. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- FIN DE Footer -->
-  </header>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script> AOS.init();</script>
-  <script src="scripts/script.js"></script>
+  </main>
+  <!-- Floating WhatsApp Button -->
+ <a class="fixed bottom-8 right-8 z-[60] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95 group" href="https://wa.me/3014414701" target="_blank">
+    <svg fill="currentColor" height="32" viewbox="0 0 16 16" width="32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+    </svg>
+    <span class="absolute right-full mr-4 bg-on-background text-white px-3 py-1.5 rounded-lg text-sm font-label-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">¡Hablemos ahora!</span>
+  </a>
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="scripts/ProductosPape.js"></script>
+  <script src="scripts/loadNav.js"></script>
+  <script src="scripts/loadFooter.js"></script>
+  <script src="scripts/animations.js"></script>
 </body>
 
 </html>

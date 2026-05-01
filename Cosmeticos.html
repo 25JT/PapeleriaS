@@ -1,371 +1,229 @@
 <!DOCTYPE html>
-<html>
+
+<html class="light" lang="es">
 
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Papeleria S</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  
-  
-  <link rel="icon" type="image/png" sizes="16x16" href="Img/logos/favicon.png">
-
-  <!-- CSS ONLY BOOSTRAP -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link rel="icon" type="image/png" sizes="16x16" href="Img/logos/favicon.png" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#890d50",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#f5dce3",
+            "surface-bright": "#fff8f8",
+            "background": "#fff8f8",
+            "on-primary-fixed-variant": "#8c0056",
+            "inverse-primary": "#ffb0cf",
+            "on-secondary-fixed": "#3e0021",
+            "primary": "#b70072",
+            "tertiary-fixed": "#e2e2e2",
+            "surface-container-high": "#fbe2e9",
+            "surface-variant": "#f5dce3",
+            "on-secondary": "#ffffff",
+            "tertiary": "#5d5f5f",
+            "on-primary-container": "#580034",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#3d0023",
+            "on-error-container": "#93000a",
+            "secondary-container": "#fd6fac",
+            "on-surface-variant": "#584049",
+            "on-tertiary": "#ffffff",
+            "secondary": "#a92c69",
+            "on-tertiary-fixed-variant": "#454747",
+            "primary-fixed": "#ffd9e5",
+            "primary-container": "#ff45a8",
+            "tertiary-fixed-dim": "#c6c6c7",
+            "surface-dim": "#edd4db",
+            "secondary-fixed-dim": "#ffb0cc",
+            "outline": "#8c6f79",
+            "surface-container": "#ffe8ee",
+            "on-tertiary-fixed": "#1a1c1c",
+            "inverse-on-surface": "#ffecf0",
+            "primary-fixed-dim": "#ffb0cf",
+            "on-error": "#ffffff",
+            "outline-variant": "#dfbec9",
+            "tertiary-container": "#909191",
+            "inverse-surface": "#3c2c31",
+            "secondary-fixed": "#ffd9e4",
+            "on-surface": "#25181d",
+            "surface-container-low": "#fff0f3",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#700040",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#fff8f8",
+            "on-tertiary-container": "#282a2b",
+            "on-background": "#25181d",
+            "surface-tint": "#b70072"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "md": "16px",
+            "gutter": "24px",
+            "sm": "8px",
+            "xs": "4px",
+            "base": "4px",
+            "xl": "48px",
+            "2xl": "80px",
+            "container_max": "1280px",
+            "lg": "24px"
+          },
+          "fontFamily": {
+            "h3": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "button": ["Inter"],
+            "h1": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "h2": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "button": ["15px", { "lineHeight": "1", "fontWeight": "600" }],
+            "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-sm": ["14px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "h2": ["32px", { "lineHeight": "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
 
+    body {
+      background-color: #fff8f8;
+      color: #25181d;
+    }
+
+    .soft-ui-card {
+      box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .soft-ui-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #fff0f3 0%, #ffffff 100%);
+    }
+  </style>
 </head>
 
-<body>
-  <!-- Icono -->
-  <div class="fixed-icon" id="fixed-icon">
-    <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-      <h6 class="text-danger">Contactanos</h6>
-      <img src="Img/logos/LOGO SIN NOMBRE.png" alt="Icono">
-    </a>
-  </div>
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 text" id="exampleModalLabel">Escribenos un mensaje</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<body
+  class="bg-surface font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+  <div id="nav-placeholder"></div>
+  <!-- TopNavBar Component -->
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="hero-gradient py-2xl px-8 md:px-20">
+      <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="w-full md:w-1/2 space-y-md">
+          <span class="font-label-sm text-primary uppercase tracking-[0.2em] mb-4 block">Colección Premium</span>
+          <h1 class="font-h1 text-h1 text-on-background leading-tight">Nuestra Línea de Cosméticos</h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Descubre la armonía entre el color y el
+            cuidado personal. Una selección curada de productos de alta gama diseñados para resaltar tu esencia
+            creativa.</p>
+          <div class="pt-8">
+            <button
+              class="bg-primary text-on-primary px-xl py-md rounded-lg font-button hover:bg-secondary transition-colors shadow-lg shadow-primary/20">Explorar
+              ahora</button>
+          </div>
         </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="message-text" class="col-form-label">Mensaje:</label>
-              <textarea class="form-control tamano" id="message-text" maxlength="100"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary butonc" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary butond" data-bs-dismiss="modal" onclick="mesj()">Enviar
-            Mensaje</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" width="10%" height="20%"
-          class="d-inline-block align-text-center">
-        <span class="fw-bold">COSMETICOS</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link letra fw-bold" href="index.html">INICIO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="Productos.html">PAPELERIA</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="Servicios.html">SERVICIOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal"
-              data-bs-whatever="@mdo">CONTACTANOS</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <header>
-    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="Img/fondos/cosmeticos.webp" class="d-block w-100 carousel-img">
-        </div>
-      </div>
-    </div>
-    <!---carusel final -->
-    <!--Promocion Yanbal-->
-    <br>
-    <section class="container my-0" data-aos="fade-up">
-      <div class="row">
-        <div class="col-lg-0   justi">
-          <h1 class="center">COSMENTICOS</h1>
-          <P class="justi"> ¡Descubre la belleza natural con nuestros exclusivos productos de Yanbal! Desde fragancias
-            irresistibles hasta tratamientos faciales rejuvenecedores, tenemos todo lo que necesitas para realzar tu
-            belleza. Calidad garantizada, resultados visibles. ¡Embellece tu vida con Yanbal hoy mismo!
-          <P>
-    </section>
-    <div class="p-2" data-aos="fade-up">
-      <h2 class="fw-bold h2 p-2 text-center">¡En Yanbal siempre ganas!</h2>
-      <div class="benefits-row">
-        <div class="benefits-item">
-          <img src="Img/logos/ventas.png" alt="Icono Ventas">
-          <h5>Por tus ventas</h5>
-          <p>Dependiendo de cuanto vendas, gana hasta 35% de descuento en tus compras.</p>
-        </div>
-        <div class="benefits-item">
-          <img src="Img/logos/caja.png" alt="Icono Kit de Bienvenida">
-          <h5>Por tu Kit de Bienvenida</h5>
-          <p>Podrás hacer demostraciones a tus clientes o vender los productos de tu kit.</p>
-        </div>
-        <div class="benefits-item">
-          <img src="Img/logos/regalo.png" alt="Icono Logros en ventas">
-          <h5>Por tus logros en ventas</h5>
-          <p>Te reconocemos con productos Yanbal por tus logros de venta durante tus 3 primeras campañas.</p>
-        </div>
-        <div class="benefits-item">
-          <img src="Img/logos/carro.png" alt="Icono Esfuerzo">
-          <h5>Por tu esfuerzo</h5>
-          <p>Reconocemos tu esfuerzo con incentivos para ti y tu hogar, en donde los podrás combinar y acumular como
-            quieras.</p>
-        </div>
-      </div>
-    </div>
-    <div class="p-2" data-aos="fade-right">
-      <h4 class="fw-bold h2 p-2 text-center" id="productos">¿Te gustaria vender <a
-          class="text-decoration-underline">YANBAL</a>? pulsa<a href="https://proyectoyanbal-b5682.web.app/">AQUI</a> y te explicaremos.</h4>
-    </div>
-
-    <!---Menu de secciones-->
-    <!-- Sección de Iconos -->
-    <section class="container my-5" id="productos">
-      <div class="text-center mb-4" data-aos="fade-up">
-        <h2 class="fw-bold">Nuestros Productos</h2>
-        <p>Explora nuestra variedad de productos para el cuidado personal.</p>
-      </div>
-      <div class="row text-center">
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-          <a href="#Lociones">
-            <div class="card p-4 shadow-sm border-0">
-              <div class="card-body">
-                <img src="Img/ImagenesRapidas/winer.jpg" class="mb-3" alt="Lociones"
-                  style="width: 100px; height: 100px;">
-                <h5 class="card-title">Lociones</h5>
-                <p class="card-text">Descubre nuestra colección de lociones fragantes.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <a href="#Desodorantes">
-            <div class="card p-4 shadow-sm border-0">
-              <div class="card-body">
-                <img src="Img/ImagenesRapidas/desodorante you.jpg" class="mb-3" alt="Desodorantes"
-                  style="width: 100px; height: 100px;">
-                <h5 class="card-title">Desodorantes</h5>
-                <p class="card-text">Mantente fresco y seguro con nuestros desodorantes.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="#Cremas">
-            <div class="card p-4 shadow-sm border-0">
-              <div class="card-body">
-                <img src="Img/ImagenesRapidas/durazno.webp" class="mb-3" alt="Cremas"
-                  style="width: 150px; height: 125px;">
-                <h5 class="card-title">Cremas</h5>
-                <p class="card-text">Hidrata tu piel con nuestras cremas nutritivas.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="#Talco">
-            <div class="card p-4 shadow-sm border-0">
-              <div class="card-body">
-                <img src="Img/ImagenesRapidas/Talco.webp" class="mb-3" alt="Cremas"
-                  style="width: 150px; height: 125px;">
-                <h5 class="card-title">Talco</h5>
-                <p class="card-text">Descubre nuestra colección de talcos perfumados.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="#Shampoo">
-            <div class="card p-4 shadow-sm border-0">
-              <div class="card-body">
-                <img src="Img/ImagenesRapidas/Agu shampoo.webp" class="mb-3" alt="Cremas"
-                  style="width: 150px; height: 125px;">
-                <h5 class="card-title">Shampoo</h5>
-                <p class="card-text">Descubre nuestra colección de shampoos.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="#Productos">
-            <div class="card p-4 shadow-sm border-0">
-              <div class="card-body">
-                <img src="Img/ImagenesRapidas/cera liquida.webp" class="mb-3" alt="Cremas"
-                  style="width: 150px; height: 125px;">
-                <h5 class="card-title">Productos</h5>
-                <p class="card-text">Explora más productos increíbles.</p>
-              </div>
-            </div>
-          </a>
+        <div class="w-full md:w-1/2 relative h-[400px] md:h-[500px] rounded-xl overflow-hidden hover:shadow-lg transition-shadow hover:scale-105 duration-300">
+          <img alt="" class="w-full h-full object-cover"
+            data-alt="A luxurious lifestyle photography shot of high-end cosmetic products arranged artfully on a marble surface. The lighting is soft and diffused, creating a bright and airy modern aesthetic consistent with light-mode UI design. Soft pink and rose gold accents dominate the color palette, featuring elegant skincare bottles and gold-trimmed brushes. The mood is serene, premium, and sophisticated, reflecting a high-quality stationery and beauty brand."
+            src="Img/fondos/cosmeticos.webp" />
         </div>
       </div>
     </section>
-  
-    </head>
-
-    <body>
-
-       <!---productos -->
-   
-       <div class="container mt-5" data-aos="fade-down">
-        <div class="row" id="product-container"></div>
-       </div>
-
-       
-       
-        <!-- Las tarjetas de productos se generarán aquí -->
-      </div>
-    </div>  
-
-
-
-      <div class="container mt-5" data-aos="fade-up">
-        <div id="loci" class="row">
-          <!-- Las tarjetas de productos se generarán aquí -->
+    <!-- Product Grid Section -->
+    <section class="py-2xl px-8 md:px-20 max-w-[1280px] mx-auto">
+      <div class="flex flex-col gap-8 mb-xl">
+        <!-- Search Bar -->
+        <div class="relative max-w-xl">
+          <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
+            <span class="material-symbols-outlined text-[20px]">search</span>
+          </span>
+          <input id="search-input"
+            class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-full text-slate-900 focus:ring-2 focus:ring-rose-500/20 focus:border-rose-500 placeholder:text-slate-400 transition-all outline-none"
+            placeholder="Buscar cosméticos..." type="text">
         </div>
-        <nav aria-label="Page navigation">
-          <ul class="pagination justify-content-center mt-4" id="pagination">
-            <!-- Los números de paginación se generarán aquí -->
-          </ul>
-        </nav>
-      </div>
-      <!--secion desodorantes-->
-     
 
-
-      </head>
-
-      <body>
-        <div class="container mt-5" data-aos="fade-right">
-          <div id="des" class="row">
-            <!-- Las tarjetas de productos se generarán aquí -->
+        <!-- Category Filter -->
+        <div class="flex flex-col gap-4">
+          <span class="text-sm font-semibold text-slate-900">Filtrar por categoría:</span>
+          <div id="category-filters" class="flex gap-2 overflow-x-auto pb-2 hide-scrollbar">
+            <!-- Buttons injected by JS -->
           </div>
-          <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center mt-4" id="pagdes">
-              <!-- Los números de paginación se generarán aquí -->
-            </ul>
-          </nav>
         </div>
-        </head>
-
-
-        <body>
-          <div class="container mt-5" data-aos="flip-left">
-            <div id="desodorante" class="row">
-              <!-- Las tarjetas de productos se generarán aquí -->
-            </div>
-          </div>
-
-          <!--secion Cremas-->
-          
-          <div class="p-2" data-aos="flip-left">
-            <h2 class="fw-bold h2 p-2 text-center">NOS ENCUNTRAS AQUI</h2>
-          </div>
-          <script>
-
-          </script>
-          </head>
-
-          <body>
-            <div class="container mt-5" data-aos="flip-left">
-              <div id="crema" class="row">
-                <!-- Las tarjetas de productos se generarán aquí -->
-              </div>
-              <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center mt-4" id="pagcre">
-                  <!-- Los números de paginación se generarán aquí -->
-                </ul>
-              </nav>
-            </div>
-            </head>
-
-
-
-
-            <!-- Footer -->
-            <footer class="footer-custom" data-aos="fade-up" data-aos-duration="1000">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-3 col-sm-6 mb-4">
-                    <h5>Contacto</h5>
-                    <ul class="list-unstyled">
-                      <li>Teléfono: <a href="tel:301-441-4701"></a></li>
-                      <a href="https://wa.me/message/Q4IDJZDEGDYYO1" aria-label="Facebook" target="_blank"><i
-                          class="fab fa-facebook">301-441-4701</i></a>
-                      <li>Email:</li>
-                      <a href="mailto:papeleria.s27@gmail.com" aria-label="Facebook"><i
-                          class="fab fa-facebook">papeleria.s27@gmail.com</i></a>
-                    </ul>
-                  </div>
-                  <div class="col-md-3 col-sm-6 mb-4">
-                    <h5>Redes Sociales</h5>
-                    <div class="footer-social">
-                      <a href="https://www.facebook.com/papeleria.soro" aria-label="Facebook"><i
-                          class="fab fa-facebook">facebook</i></a>
-                      <!-- Añadir más iconos de redes sociales -->
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-sm-6 mb-4">
-                    <h5>Dirección</h5>
-                    <p>Av4 #2-42 palmaseca</p>
-                  </div>
-                  <div class="col-md-3 col-sm-6 text-center mb-4">
-                    <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" class="footer-logo">
-                    <h5><a href="what.html">¿Quienes somos? </a></h5>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127434.5548822756!2d-76.49730571751309!3d3.5109598714967127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a07555a296a91%3A0x4e51e8074e54052d!2sPapeleria%20S!5e0!3m2!1ses!2sco!4v1720125877261!5m2!1ses!2sco"
-                      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"></iframe>
-                  </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-12 text-center">
-                    <p>&copy; 2023 Papeleria S. Todos los derechos reservados.</p>
-                  </div>
-                </div>
-              </div>
-            </footer>
-            <!-- FIN DE Footer -->
-  </header>
-
-
-
-
-
-
-  <!-- Bootstrap JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="scripts/script.js"></script>
-  <script> AOS.init();</script>
+      </div>
+      <!-- Grid Layout -->
+      <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter lg:gap-8">
+        <!-- Los productos se cargarán dinámicamente desde la API -->
+      </div>
+      <div class="flex justify-center mt-xl">
+        <button id="load-more-button"
+          class="bg-surface-container-lowest text-primary border-2 border-primary-container w-14 h-14 rounded-full flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 shadow-sm">
+          <span class="material-symbols-outlined text-3xl">expand_more</span>
+        </button>
+      </div>
+    </section>
+    <!-- Newsletter / Community Section -->
+    <section class="bg-surface-container-high py-2xl px-8 md:px-20">
+      <div class="max-w-4xl mx-auto text-center space-y-md">
+        <h2 class="font-h2 text-h2 text-on-background">Únete a nuestra comunidad creativa</h2>
+        <p class="font-body-md text-on-surface-variant">Recibe consejos de belleza, ofertas exclusivas y lanzamientos de
+          temporada directamente en tu correo.</p>
+        <div class="flex flex-col sm:flex-row gap-4 mt-8 max-w-lg mx-auto">
+          <input
+            class="flex-grow rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary px-6 py-3"
+            placeholder="Tu correo electrónico" type="email" />
+          <button
+            class="bg-primary text-on-primary px-8 py-3 rounded-lg font-button hover:bg-secondary transition-colors whitespace-nowrap">Suscribirse</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <!-- WhatsApp Floating Button -->
+  <a class="fixed bottom-8 right-8 z-[60] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95 group"
+    href="https://wa.me/3014414701" target="_blank">
+    <svg fill="currentColor" height="32" viewbox="0 0 16 16" width="32" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z">
+      </path>
+    </svg>
+    <span
+      class="absolute right-full mr-4 bg-on-background text-white px-3 py-1.5 rounded-lg text-sm font-label-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">¡Hablemos
+      ahora!</span>
+  </a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="scripts/loadNav.js"></script>
   <script src="scripts/productosCos.js"></script>
+  <script src="scripts/loadFooter.js"></script>
+  <script src="scripts/animations.js"></script>
 </body>
 
 </html>

@@ -1,194 +1,307 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Servicios</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="Img/logos/favicon.png">
+<!DOCTYPE html>
 
-    <!-- CSS ONLY BOOSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<html class="light" lang="es">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css">
- 
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#890d50",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#f5dce3",
+            "surface-bright": "#fff8f8",
+            "background": "#fff8f8",
+            "on-primary-fixed-variant": "#8c0056",
+            "inverse-primary": "#ffb0cf",
+            "on-secondary-fixed": "#3e0021",
+            "primary": "#b70072",
+            "tertiary-fixed": "#e2e2e2",
+            "surface-container-high": "#fbe2e9",
+            "surface-variant": "#f5dce3",
+            "on-secondary": "#ffffff",
+            "tertiary": "#5d5f5f",
+            "on-primary-container": "#580034",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#3d0023",
+            "on-error-container": "#93000a",
+            "secondary-container": "#fd6fac",
+            "on-surface-variant": "#584049",
+            "on-tertiary": "#ffffff",
+            "secondary": "#a92c69",
+            "on-tertiary-fixed-variant": "#454747",
+            "primary-fixed": "#ffd9e5",
+            "primary-container": "#ff45a8",
+            "tertiary-fixed-dim": "#c6c6c7",
+            "surface-dim": "#edd4db",
+            "secondary-fixed-dim": "#ffb0cc",
+            "outline": "#8c6f79",
+            "surface-container": "#ffe8ee",
+            "on-tertiary-fixed": "#1a1c1c",
+            "inverse-on-surface": "#ffecf0",
+            "primary-fixed-dim": "#ffb0cf",
+            "on-error": "#ffffff",
+            "outline-variant": "#dfbec9",
+            "tertiary-container": "#909191",
+            "inverse-surface": "#3c2c31",
+            "secondary-fixed": "#ffd9e4",
+            "on-surface": "#25181d",
+            "surface-container-low": "#fff0f3",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#700040",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#fff8f8",
+            "on-tertiary-container": "#282a2b",
+            "on-background": "#25181d",
+            "surface-tint": "#b70072"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "md": "16px",
+            "gutter": "24px",
+            "sm": "8px",
+            "xs": "4px",
+            "base": "4px",
+            "xl": "48px",
+            "2xl": "80px",
+            "container_max": "1280px",
+            "lg": "24px"
+          },
+          "fontFamily": {
+            "h3": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "button": ["Inter"],
+            "h1": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "h2": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "button": ["15px", { "lineHeight": "1", "fontWeight": "600" }],
+            "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-sm": ["14px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
 
-<!-- Icono -->
-<div class="fixed-icon" id="fixed-icon">
-  <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-    <h6 class="text-danger">Contactanos</h6>
-    <img src="Img/logos/LOGO SIN NOMBRE.png" alt="Icono">
-  </a>
-</div>
+    .soft-elevation {
+      box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.04);
+    }
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5 text" id="exampleModalLabel">Escribenos un mensaje</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Mensaje:</label>
-            <textarea class="form-control tamano" id="message-text" maxlength="100"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary butonc" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary butond" data-bs-dismiss="modal" onclick="mesj()">Enviar
-          Mensaje</button>
-      </div>
-    </div>
-  </div>
-</div>
+    .glass-nav {
+      backdrop-filter: blur(12px);
+    }
+  </style>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" width="10%" height="20%" class="d-inline-block align-text-center">
-        <span class="fw-bold">BIENVENIDOS</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link letra fw-bold" href="Productos.html">PAPELERIA</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="Cosmeticos.html">COSMETICOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="Servicios.html">SERVICIOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">CONTACTANOS</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-<!-- Finalización -->
-
-    <!---imagen-->
-    <header data-aos="fade-up-right">
-        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true" data-aos="fade-down">
-          <div class="carousel-inner">
-            <div class="carousel-item active" >
-              <img src="Img/fondos/Servicios.png" class="d-block w-100 carousel-img">
-            </div>
-          </div>
-        </div>
-        </header>
-<!---imagen final -->
-<header>
-    <section class="container my-0" data-aos="fade-up">
-        <div class="row">
-          <div class="col-lg-0   justi" >
-            <h1 class="center">SERVICIOS</h1>
-            <P class="justi"> necesites copias rápidas para una reunión de última hora o impresiones de alta calidad para un proyecto importante, nuestro servicio de fotocopiado e impresión está listo para ti. Utilizamos equipos de última tecnología para garantizar resultados nítidos y profesionales en cada página. </P>
-      </section>
-      <div class="container mt-5"data-aos = "fade-down-left">
-        <div class="row">
-          <!-- Producto 1 -->
-          <div class="col-md-4 mb-4">
-            <div class="card">
-              <a href="https://wa.me/message/Q4IDJZDEGDYYO1" target="_blank">
-                <img src="Img/Servicios/impresiones.webp" class="card-img-top" alt="Producto 1">
-              </a>
-              <div class="card-body text-center">
-                <h5 class="card-title">Impresiones </h5>
-                
-              </div>
-              
-            </div>
-            
-          </div>
-          <!-- Producto 2 -->
-          <div class="col-md-4 mb-4">
-            <div class="card">
-              <a href="https://wa.me/message/Q4IDJZDEGDYYO1" target="_blank">
-                <img src="Img/Servicios/Scaner.jpg" class="card-img-top" alt="Producto 1">
-              </a>
-              <div class="card-body text-center">
-                <h5 class="card-title">Scaner </h5>
-                
-              </div>
-              
-            </div>
-            </div>
-                <!-- Producto 3 -->
-          <div class="col-md-4 mb-4">
-            <div class="card">
-              <a href="https://wa.me/message/Q4IDJZDEGDYYO1" target="_blank">
-                <img src="Img/Servicios/doc.jpg" class="card-img-top" alt="Producto 1">
-              </a>
-              <div class="card-body text-center">
-                <h5 class="card-title">Creacion de documentos </h5>
-                
-              </div>
-              
-            </div>
-        </div>
-    </div> 
-</header>
-
- <!-- Footer -->
- <footer class="footer-custom" data-aos="fade-up">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6 mb-4">
-          <h5>Contacto</h5>
-          <ul class="list-unstyled">
-            <li>Teléfono: <a href="tel:301-441-4701"></a></li>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook">301-441-4701</i></a>
-            <li>Email:</li>
-            <a href="mailto:papeleria.s27@gmail.com" aria-label="Facebook"><i class="fab fa-facebook">papeleria.s27@gmail.com</i></a>
-          </ul>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-          <h5>Redes Sociales</h5>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/papeleria.soro" aria-label="Facebook"><i class="fab fa-facebook">facebook</i></a>
-            <!-- Añadir más iconos de redes sociales -->
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-          <h5>Dirección</h5>
-          <p>Av4 #2-42 palmaseca</p>
-        </div>
-        <div class="col-md-3 col-sm-6 text-center mb-4">
-          <img src="Img/logos/LOGO PAPELERIA.png" alt="Logo" class="footer-logo">
-          <h5><a href="what.html">¿Quienes somos? </a></h5>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127434.5548822756!2d-76.49730571751309!3d3.5109598714967127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a07555a296a91%3A0x4e51e8074e54052d!2sPapeleria%20S!5e0!3m2!1ses!2sco!4v1720125877261!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-12 text-center">
-          <p>&copy; 2023 Papeleria S. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- FIN DE Footer -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="scripts/script.js"></script>
-<script>AOS.init();</script>
 </head>
+
+<body
+  class="bg-surface font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+  <!-- TopNavBar -->
+  <div id="nav-placeholder"></div>
+  <main class="mt-20">
+    <!-- Hero Section -->
+    <section
+      class="relative w-full h-[614px] min-h-[400px] flex items-center justify-center overflow-hidden bg-surface-container-low">
+      <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover opacity-20 scale-105"
+          data-alt="A clean, bright, and organized stationery shop interior with soft pink and white tones. The lighting is diffused and professional, highlighting premium paper goods and design tools. A minimalist aesthetic is achieved through symmetrical shelving and high-key illumination, creating an atmosphere of creative possibility and premium service."
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSHwWX65VPHj8cKs7LbR2aeWmIy1T-bXVnlm0ySvcXORITCPcih1t2xGfKAFN8UWrbSVzWdLPORvONr451HoXy8IVbozfnE-roUKFjsWJbJ1nt8kK2y1PAe-Bo3XOGgoCksm3cXSOw02cGHiayWVyQJjvA-wgp23cu0T7JX9Who7e0mQorl1oMJ9nlgwE9uBfEypUopdhj6SDlADY3_hfrZTh1GptMwYJFVzWMAg5QHeBzT_7ZSPimV7Hom2j1u3V47lruTdvIzvi8" />
+      </div>
+      <div class="relative z-10 text-center px-gutter max-w-4xl mx-auto">
+        <span class="font-label-sm text-primary uppercase tracking-[0.2em] mb-4 block">Excelencia en cada trazo</span>
+        <h1 class="font-h1 text-h1 text-on-background mb-6">Nuestros Servicios Profesionales</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Soluciones integrales de diseño e
+          impresión con la precisión y el estilo que tu proyecto merece.</p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="max-w-[1280px] mx-auto py-2xl px-8 md:px-20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        
+        <!-- Card 1 -->
+        <div class="group bg-white rounded-xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col overflow-hidden">
+          <div class="aspect-square w-full overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwcC68P5D5-azwsaEJ-F0EwrGfUn9aFPpNNj9EMgXE3F8iDa4ZP33WNokrycg5GpMSZo3VVpgmwsOPCzCjgpNU6sIndrLF0Tz4lF_QNEs-_Iu_44sYKqlQWtQSIi_8_k3sw07Uils5_IH-_-BOZ3Xj7gKb9Zy8wWI1R5jBGOaz2ApILIo9tT4G9FHfDzc_MGcKBDLSVmZvT6W8_8zqjRQj-OeHPMeBCj6kyo279T_4Xlr0va4XLB-5dbOhWa0sZiKLdd7RBDikaEPB" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex-grow">
+              <div class="flex items-center gap-2 mb-4 text-primary">
+                <span class="material-symbols-outlined text-lg">print</span>
+                <span class="font-label-sm uppercase">Impresión Premium</span>
+              </div>
+              <h3 class="font-h3 text-xl mb-2">Impresiones de alta calidad</h3>
+              <p class="text-sm text-slate-600">Resultados nítidos y colores vibrantes en diversos gramajes de papel para tus proyectos más exigentes.</p>
+            </div>
+            <a href="https://wa.me/3014414701?text=Hola,%20necesito%20información%20sobre%20el%20servicio%20de%20Impresión%20Premium" target="_blank"
+              class="mt-6 w-full py-4 bg-[#b70072] text-white font-bold rounded-xl text-center shadow-md hover:bg-[#8c0056] transition-all">Solicitar información</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group bg-white rounded-xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col overflow-hidden">
+          <div class="aspect-square w-full overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFYwG2SjMRbDKReO6xor_8G9PhCkfLwrrh7UasC1I1gXQgvf3tjFcVzI80MD_kwram0uQcuc0ZrzTkPzlDxVlEewvb3p9PGXweSPI3RMBls4sGJWgc3b5TsbLXuvKfKunypkzKeW6nz4WBgEqMVlQNmWN1M4iquKsZorMr5xs7Zzp0yOtj_ByR5k-g5ctQgDO7VXdZU-LIESpExjl1MyA6C_gnbfvVseWH_Bt3YbjR4-UU4NNstAhuiYWj-pgL4Ot0VPm4kawq5hsR" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex-grow">
+              <div class="flex items-center gap-2 mb-4 text-primary">
+                <span class="material-symbols-outlined text-lg">document_scanner</span>
+                <span class="font-label-sm uppercase">Digitalización</span>
+              </div>
+              <h3 class="font-h3 text-xl mb-2">Escaneos de documentos</h3>
+              <p class="text-sm text-slate-600">Convierte tus archivos físicos a formato digital con la máxima resolución y claridad.</p>
+            </div>
+            <a href="https://wa.me/3014414701?text=Hola,%20necesito%20información%20sobre%20el%20servicio%20de%20Digitalización" target="_blank"
+              class="mt-6 w-full py-4 bg-[#b70072] text-white font-bold rounded-xl text-center shadow-md hover:bg-[#8c0056] transition-all">Solicitar información</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group bg-white rounded-xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col overflow-hidden">
+          <div class="aspect-square w-full overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5OLhkcSobQaVGCU9QirXYAA6rsPTD2x_g2-MqKXFdg3xx233lOqHWMnGG2HMqILSgzIeCa0hJQ7mQfjm_-0Pq5XECzZEHFdHz_YMd531afwFa92ayr6BK5wdLgbW8ysemuFZFbZqv2q7BZ3IKzcqG3CEzT_hBTLkeTul8htASrZS06FBpKuUBcae_43jMBhUAkHNZN6cLwoemymSNJXXeqDNC4fHUfGLFpw2mEh57ekSJAKduvxW9zSw5tde1w4uhNfSMQ-t_alBU" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex-grow">
+              <div class="flex items-center gap-2 mb-4 text-primary">
+                <span class="material-symbols-outlined text-lg">camera_alt</span>
+                <span class="font-label-sm uppercase">Identidad</span>
+              </div>
+              <h3 class="font-h3 text-xl mb-2">Fotografía para documentos</h3>
+              <p class="text-sm text-slate-600">Captura profesional para pasaportes, carnets y visas, cumpliendo con requisitos oficiales.</p>
+            </div>
+            <a href="https://wa.me/3014414701?text=Hola,%20necesito%20información%20sobre%20el%20servicio%20de%20Fotografía" target="_blank"
+              class="mt-6 w-full py-4 bg-[#b70072] text-white font-bold rounded-xl text-center shadow-md hover:bg-[#8c0056] transition-all">Solicitar información</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group bg-white rounded-xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col overflow-hidden">
+          <div class="aspect-square w-full overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              src="https://web-assets.esetstatic.com/tn/-x700/wls/2019/10/osint-investigacion-internet.jpg" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex-grow">
+              <div class="flex items-center gap-2 mb-4 text-primary">
+                <span class="material-symbols-outlined text-lg">find_in_page</span>
+                <span class="font-label-sm uppercase">Investigacion</span>
+              </div>
+              <h3 class="font-h3 text-xl mb-2">Documentos</h3>
+              <p class="text-sm text-slate-600">Buscamos cualquier documento que necesites (adres, policía, EPS, etc.).</p>
+            </div>
+            <a href="https://wa.me/3014414701?text=Hola,%20necesito%20información%20sobre%20Investigación%20de%20Documentos" target="_blank"
+              class="mt-6 w-full py-4 bg-[#b70072] text-white font-bold rounded-xl text-center shadow-md hover:bg-[#8c0056] transition-all">Solicitar información</a>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="group bg-white rounded-xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col overflow-hidden">
+          <div class="aspect-square w-full overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvcRXmjY0Yy9XnmKpshFHLLDNxUhurMf8dLiMii2cRy4T-NqIzMpa29LVAaauDqytWLXXcEPC9cW8Ec1bzRJ7aLX00Jf3WQRR1rLnTBPlZda7SAJq8kCLpHrCx2apcwXWJgbX56TLzi3XUyB50ng0HYGeyVUvEb4D_VuLewvydTmAjAfUykq9_TyPGcY-i2n7qaq5jyGloOMwoLsHFZ-DIHvPMsdIgURcuEWIXG825EYU_48tkKSCJbLg4gEp_hzvA4y7NaIlD1DwL" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex-grow">
+              <div class="flex items-center gap-2 mb-4 text-primary">
+                <span class="material-symbols-outlined text-lg">layers</span>
+                <span class="font-label-sm uppercase">Protección</span>
+              </div>
+              <h3 class="font-h3 text-xl mb-2">Plastificación</h3>
+              <p class="text-sm text-slate-600">Protege tus documentos del desgaste con nuestro servicio de laminado.</p>
+            </div>
+            <a href="https://wa.me/3014414701?text=Hola,%20necesito%20información%20sobre%20Plastificación" target="_blank"
+              class="mt-6 w-full py-4 bg-[#b70072] text-white font-bold rounded-xl text-center shadow-md hover:bg-[#8c0056] transition-all">Solicitar información</a>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="group bg-white rounded-xl shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col overflow-hidden">
+          <div class="aspect-square w-full overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBoAzH-pchD7atnSf-lSW8xWEXYzWhrpN9kIMgcuOEhedX2tCk9zN6j1Wkk8lobrM86LwcUOe75dvyr_2iYBmdsD1fYoSfsoxibQ56mACWFpHNYYektZ3hTZi7rFikfJ4tt78B_nTMmzoFM3aMLpU-bCcKf8NemEXLT40yj9RbSGUkTRov4NEzPbqHfPdDZ6_g_yUOhA2QKkBIPI6hhtAfDYWlP9zGnpi9rNLMfSaUJHTsm8hq0R9YpBKmYebe4ox0LvrZhS9pXHdc" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex-grow">
+              <div class="flex items-center gap-2 mb-4 text-primary">
+                <span class="material-symbols-outlined text-lg">palette</span>
+                <span class="font-label-sm uppercase">Creatividad</span>
+              </div>
+              <h3 class="font-h3 text-xl mb-2">Diseño gráfico</h3>
+              <p class="text-sm text-slate-600">Creamos tus tarjetas, volantes y logos con un enfoque moderno.</p>
+            </div>
+            <a href="https://wa.me/3014414701?text=Hola,%20necesito%20información%20sobre%20Diseño%20Gráfico" target="_blank"
+              class="mt-6 w-full py-4 bg-[#b70072] text-white font-bold rounded-xl text-center shadow-md hover:bg-[#8c0056] transition-all">Solicitar información</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-surface-container py-2xl">
+      <div class="max-w-[1280px] mx-auto px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-xl">
+        <div class="max-w-xl">
+          <h2 class="font-h2 text-h2 mb-4">¿Necesitas un presupuesto personalizado?</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">Cuéntanos sobre tu proyecto y nuestro equipo de
+            expertos te asesorará para obtener el mejor resultado.</p>
+        </div>
+        <div class="flex gap-4">
+          <a href="https://wa.me/3014414701?text=Hola,%20vengo%20de%20la%20web%20y%20necesito%20un%20presupuesto%20personalizado" target="_blank"
+            class="px-10 py-4 bg-[#b70072] text-white font-bold rounded-xl shadow-lg hover:bg-[#8c0056] transition-all duration-300 text-center block">Contáctanos ahora</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <!-- WhatsApp FAB -->
+  <a class="fixed bottom-8 right-8 z-[60] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95 group"
+    href="https://wa.me/3014414701" target="_blank">
+    <svg fill="currentColor" height="32" viewbox="0 0 16 16" width="32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+    </svg>
+    <span class="absolute right-full mr-4 bg-on-background text-white px-3 py-1.5 rounded-lg text-sm font-label-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">¡Hablemos ahora!</span>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="scripts/loadNav.js"></script>
+  <script src="scripts/loadFooter.js"></script>
+  <script src="scripts/animations.js"></script>
+</body>
+
 </html>
