@@ -1,0 +1,41 @@
+{
+  "name": "Papelería S | Estilo y Creatividad",
+  "short_name": "Papelería S",
+  "description": "Descubre una selección curada de papelería premium, cosméticos y servicios profesionales diseñados para inspirar tu día a día.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff8f8",
+  "theme_color": "#b70072",
+  "icons": [
+    {
+      "src": "Img/logos/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "Img/logos/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "Img/logos/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "Img/logos/LOGO SIN NOMBRE.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "Img/logos/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
