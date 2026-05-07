@@ -177,19 +177,13 @@ if (loadMoreButton) {
   observer.observe(loadMoreButton);
 }
 
-fetch("https://api-protection-cnkp.vercel.app/inventario/productos")
-  .then(response => response.json())
-  .then(data => {
-
-
-    const items = Array.isArray(data)
-
-      ? data
-      : Array.isArray(data.values)
-        ? data.values.slice(1)
-        : Object.values(data);
-    console.log(items.value);
-    if (!Array.isArray(items) || items.length === 0) {
+fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent("https://api-protection-cnkp.vercel.app/inventario/productos")}`)
+  .then(response => {
+    if (!response.ok) throw new Error("Error en el proxy");
+    return response.json();
+  })
+  .then(items => {
+    if (!items || !Array.isArray(items)) {
       console.error("❌ No se encontraron datos válidos en la API.");
       if (container) {
         container.innerHTML = `<div class="col-span-3 text-center py-16"><p class="text-base font-semibold text-slate-500">No hay productos disponibles en este momento.</p></div>`;

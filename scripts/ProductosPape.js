@@ -131,21 +131,18 @@ if (loadMoreButton) {
     observer.observe(loadMoreButton);
 }
 
-fetch("https://api-protection-cnkp.vercel.app/inventario/papeleria")
-    .then(response => response.json())
-    .then(data => {
-        if (!data || typeof data !== "object") {
+fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent("https://api-protection-cnkp.vercel.app/inventario/papeleria")}`)
+    .then(response => {
+        if (!response.ok) throw new Error("Error en el proxy");
+        return response.json();
+    })
+    .then(productsData => {
+        if (!productsData || !Array.isArray(productsData)) {
             console.error("❌ No se encontraron datos válidos en la API.");
             return;
         }
 
-        const values = Array.isArray(data.values) ? data.values : Object.values(data);
-        if (!Array.isArray(values) || values.length === 0) {
-            console.error("❌ No hay datos válidos en la respuesta.");
-            return;
-        }
-
-        products = values.slice(1).map(row => ({
+        products = productsData.map(row => ({
             title: row['title']?.trim() || "Sin nombre",
             colores: row['colores']?.trim() || "N/A",
             paquetes: row['paquetes']?.trim() || "N/A",

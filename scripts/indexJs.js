@@ -108,16 +108,16 @@ async function populateFeaturedProducts() {
 
   try {
     const [papeleraRes, cosmeticosRes] = await Promise.all([
-      fetch("https://api-protection-cnkp.vercel.app/inventario/papeleria"),
-      fetch("https://api-protection-cnkp.vercel.app/inventario/productos")
+      fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent("https://api-protection-cnkp.vercel.app/inventario/papeleria")}`),
+      fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent("https://api-protection-cnkp.vercel.app/inventario/productos")}`)
     ]);
 
     const papeleraData = await papeleraRes.json();
     const cosmeticosData = await cosmeticosRes.json();
 
-    // Procesar papelería (Toda la lista)
+    // Procesar papelería
     const papeleraValues = Array.isArray(papeleraData) ? papeleraData :
-      (papeleraData.values && Array.isArray(papeleraData.values)) ? papeleraData.values.slice(1) :
+      (papeleraData.values && Array.isArray(papeleraData.values)) ? papeleraData.values :
         Object.values(papeleraData);
 
     let paperProducts = papeleraValues
@@ -130,9 +130,9 @@ async function populateFeaturedProducts() {
       }))
       .filter(p => p.imgSrc && p.title !== "Producto");
 
-    // Procesar cosméticos (Toda la lista)
+    // Procesar cosméticos
     const cosmeticosValues = Array.isArray(cosmeticosData) ? cosmeticosData :
-      (cosmeticosData.values && Array.isArray(cosmeticosData.values)) ? cosmeticosData.values.slice(1) :
+      (cosmeticosData.values && Array.isArray(cosmeticosData.values)) ? cosmeticosData.values :
         Object.values(cosmeticosData);
 
     let cosmeticItems = cosmeticosValues
